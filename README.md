@@ -30,3 +30,6 @@ Download from [Chrome Store](https://chrome.google.com/webstore/category/extensi
 ```
 
 [logo]: https://github.com/aymyousfan/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
+
+##### Sources
+This extension is mostly inspired by Jord West's [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you are a Facebook user.
