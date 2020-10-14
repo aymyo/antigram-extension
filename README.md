@@ -1,4 +1,4 @@
-# Antigram Chrome Extension
+#  Antigram ![alt text][logo] Chrome Extension 
 
 Antigram is a chrome extension that gives the user tools to fight back Instagram's features designed to be addictive. It was made on my free time with the objective of being able to check what were my friends up to without falling into a blackhole of meaningless content.
 
@@ -16,8 +16,9 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 - Javascript and plain CSS
 
 #### Setup
-Download from chrome store (link) or install it manually:
+Download from [Chrome Store](https://chrome.google.com/webstore/category/extensions?hl=en-US "Chrome Store") or install it manually:
 
+```
 > Open Chrome 
 > Go to "Customize"
 > Go to "More tools"
@@ -26,3 +27,6 @@ Download from chrome store (link) or install it manually:
 > Click on "Load unpacked" 
 > Select this folder 
 > Done!
+```
+
+[logo]: https://github.com/aymyousfan/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
