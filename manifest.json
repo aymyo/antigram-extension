@@ -1,0 +1,35 @@
+{
+    "name": "Antigram Web",
+    "version": "1.0",
+    "description": "Blocks Instagram's Explore section to avoid procastination.",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "page_action": {
+      "default_title": "Antigram Web",
+      "default_icon": {
+          "16": "images/ag16.png",
+          "32": "images/ag32.png",
+          "48": "images/ag48.png",
+          "128": "images/ag128.png"
+        }
+    },
+    "icons": {
+        "16": "images/ag16.png",
+        "32": "images/ag32.png",
+        "48": "images/ag48.png",
+        "128": "images/ag128.png"
+      },
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [{
+        "css": ["styles.css"],
+        "js": ["content.js"],
+        "matches": ["*://*.instagram.com/*"],
+        "run_at":  "document_idle"
+      }],
+    "options_page": "options.html",
+    "manifest_version": 2
+  }

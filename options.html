@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sansita+Swashed&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body class="ag-body">
+    <div class="ag-container" id="settings_page">
+      <header class="ag-header">
+        <img class="ag-logo" src="/images/ag128.png" 
+        alt="Antigram Logo">
+        <h1 class="ag-h1">Antigram</h1>
+      </header>
+      
+      <h3 class="ag-h3">Settings</h3>
+      
+      <div class="ag-category">
+        <h5 class="ag-h5">
+          <i class="fa fa-ban" aria-hidden="true"></i>
+          Blocker
+        </h5>
+
+        <label class="ag-label">
+          Hide Explore
+          <span class="ag-toggle">
+            <input type="checkbox" id="explore">
+            <span class="slider"></span>
+          </span>
+        </label>
+
+        <label class="ag-label">
+          Hide Suggestions
+          <span class="ag-toggle">
+            <input type="checkbox" id="suggestions">
+            <span class="slider"></span>
+          </span>
+        </label>
+
+        <label class="ag-label">
+          Hide Stories
+          <span class="ag-toggle">
+            <input type="checkbox" id="stories">
+            <span class="slider"></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="ag-category">
+        <h5 class="ag-h5">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          Appearence
+        </h5>
+
+        <span class="ag-label">
+          Background color
+          <input class="ag-color" type="color" id="bg_color">
+          <label class="ag-toggle">
+            <input type="checkbox" id="color">
+            <span class="slider"></span>
+          </label>
+        </span>
+      </div>
+
+
+      <h5 class="ag-h5" id="about_link">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        About
+        <i class="fa fa-external-link ag-about"></i>
+      </h5>
+
+      <div class="ag-save" id="saved_text">
+    
+      </div>
+
+      
+    </div>
+
+    <div class="ag-container" id="about_page">
+      <header class="ag-header">
+        <img class="ag-logo" src="/images/ag128.png" 
+        alt="Antigram Logo">
+        <h1 class="ag-h1">Antigram</h1>
+      </header>
+
+      <h3 class="ag-h3">About</h3>
+
+      <div class="ag-category">
+        <p class="ag-manifesto">
+          Antigram is a simple chrome extension that makes the user able to disable the "Explore" page on Instagram. 
+          This way, one can use instagram on the web and see what their 
+          friends are up to, without falling into an infinite backhole of meaningless content and procastination.
+          Additionally, the follower suggestions can also be hidden, and the background color can be customized.
+          Luckily, for some reason the Instagram web has no adverts, so that was not needed to block.<br><br>
+  
+          Antigram tries to give the user tools to fight back applications designed to be addictive.
+          It is free and it does not track you.
+        </p>
+      
+
+        <h5 class="ag-h5">
+          <i class="fa fa-handshake-o" aria-hidden="true"></i>
+          Support
+        </h5>
+
+        <label class="ag-label ag_sup">
+          Tell a friend
+          <i class="fa fa-external-link "></i>
+        </label>
+
+        <label class="ag-label ag_sup">
+          Leave a review on Chrome Store
+          <i class="fa fa-external-link "></i>
+        </label>
+
+        <label class="ag-label ag_sup">
+          Report bugs or make suggestions via Github
+          <i class="fa fa-external-link "></i>
+        </label>
+
+        <label class="ag-label ag_sup">
+          Buy me a coffee
+          <i class="fa fa-external-link "></i>
+        </label>
+      </div>
+
+      <h5 class="ag-h5" id="settings_link">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Back to Settings
+        <i class="fa fa-external-link ag-about"></i>
+      </h5>
+
+      <div class="ag-save" id="saved_text">
+        by Ayman Yousfan
+      </div>
+    </div>
+    
+
+  </body>
+  <script src="options.js"> </script>
+</html>
