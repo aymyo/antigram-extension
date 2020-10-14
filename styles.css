@@ -99,8 +99,8 @@
     top: 2px;
   }
 
-  .ag-about:hover {
-    color: #838282;
+  #about_link:hover, #settings_link:hover {
+    color:#AD3D3D;
   }
 
   .ag-color {
@@ -153,6 +153,18 @@
 
   .ag-btn:active {
     background-color: #702727;
+  }
+
+  .ag-sup {
+    text-decoration: none;
+  }
+  .ag-sup i {
+    margin-right:8px;
+    font-size: 16px;
+  }
+  .ag-sup:hover {
+    cursor: pointer;
+    color:white;
   }
 
   /* ----------------------- Toggle Button ------------- */
