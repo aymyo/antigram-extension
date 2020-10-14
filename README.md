@@ -12,10 +12,10 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 - Better feed visualization
 - ... (I accept suggestions)
 
-#### Technology Used
+### Technology Used
 - Javascript and plain CSS
 
-#### Setup
+### Setup
 Download from [Chrome Store](https://chrome.google.com/webstore/category/extensions?hl=en-US "Chrome Store") or install it manually:
 
 ```
