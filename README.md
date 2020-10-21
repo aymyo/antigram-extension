@@ -1,4 +1,4 @@
-# WIP: Antigram ![alt text][logo] Chrome Extension 
+# Antigram ![alt text][logo] Chrome Extension 
 
 Antigram is a chrome extension that gives the user tools to fight back Instagram's features designed to be addictive. It was made on my free time with the objective of being able to check what were my friends up to without falling into a blackhole of meaningless content.
 
