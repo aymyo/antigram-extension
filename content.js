@@ -1,22 +1,25 @@
 
-
+//An array that will store the option values: 
+//[explore-toggle,suggestions-toggle,stories,color-toggle,hexadecimal color code]
 let option_values;
 
-//We select the navigation links and the explore feed
+//Applies the changes whenever the options are modified
 chrome.storage.onChanged.addListener(ApplyAntigram);
 
 //Applies Antigram features depending on the options selected
 function ApplyAntigram() {
+    //We select the navigation links and the explore feed
     let NavLinks = document.querySelector('div._47KiJ')
     let Suggestions = document.querySelector('div._8UZ6e')
     let Stories = document.querySelector('div.VideM')
     let Main = document.querySelector('[role=main]');
     let Nav = document.querySelector('div.Hz2lF');
 
+    //We load the settings from the local storage
     chrome.storage.sync.get(['options'], function(result) {
         option_values = result.options;
 
-        //Hide Explore
+        //Hides/Shows Explore if it exists on the page
         if(option_values[0] && NavLinks != null){
             NavLinks.children[2].style.display = "none";
             if (window.location.pathname == "/explore/"){
@@ -30,7 +33,7 @@ function ApplyAntigram() {
             }
         }
         
-        //Hide Suggestions
+        //Hides/Shows Follower Suggestions if they exist on the page
         if(option_values[1] && Suggestions != null){
             Suggestions.style.display = "none";
         }
@@ -38,7 +41,7 @@ function ApplyAntigram() {
             Suggestions.style.display = "block";
         }
 
-        //Hide Stories
+        //Hides/Shows Stories if they exists on the page
         if(option_values[2] && Stories != null){
             Stories.style.display = "none";
         }
@@ -46,7 +49,7 @@ function ApplyAntigram() {
             Stories.style.display = "block";
         }
         
-        //Change Background Color
+        //Changes Background Color if the setting is activated / restores the original if it's not the case
         if(option_values[3] == true){
             if(Main != null) {
                 Main.style.backgroundColor = option_values[4];
@@ -67,9 +70,11 @@ function ApplyAntigram() {
         
     });
 
+    //Debug purposes
     console.log(option_values)
 
 }
 
-// We wait for the elements to load
+// We call the function periodically and after a delay to let the components load.
+// TO DO: think for a more efficient way to do this.
 setInterval(ApplyAntigram, 1000); 

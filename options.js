@@ -1,4 +1,5 @@
 
+//We get the elements that will trigger functions
 let explore = document.getElementById('explore');
 let suggestions = document.getElementById('suggestions');
 let stories = document.getElementById('stories');
@@ -31,6 +32,7 @@ function getOptions() {
   });
 }
 
+//Displays either the "Options" page or the "About" one.
 function toggleAbout() {
   if(!about_showing){
     document.getElementById('settings_page').style.display="none";
@@ -45,6 +47,7 @@ function toggleAbout() {
   
 }
 
+//Adds event listeners to all buttons
 explore.addEventListener("change", updateOptions);
 suggestions.addEventListener("change", updateOptions);
 stories.addEventListener("change", updateOptions);

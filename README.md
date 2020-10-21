@@ -10,6 +10,7 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 
 ##### Future features?
 - Better feed visualization
+- Accessible options menu
 - ... (I accept suggestions)
 
 ### Technology Used
