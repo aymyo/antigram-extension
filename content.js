@@ -75,6 +75,9 @@ function ApplyAntigram() {
 
 }
 
-// We call the function periodically and after a delay to let the components load.
-// TO DO: think for a more efficient way to do this.
-setInterval(ApplyAntigram, 1000); 
+let applyCallInterval = setInterval(ApplyAntigram, 500); 
+
+window.addEventListener('load', () => {
+    ApplyAntigram();
+    clearInterval(applyCallInterval);
+});
