@@ -9,11 +9,11 @@ chrome.storage.onChanged.addListener(ApplyAntigram);
 //Applies Antigram features depending on the options selected
 function ApplyAntigram() {
     //We select the navigation links and the explore feed
-    let NavLinks = document.querySelector('div._47KiJ')
-    let Suggestions = document.querySelector('div._8UZ6e')
-    let Stories = document.querySelector('div.VideM')
-    let Main = document.querySelector('[role=main]');
-    let Nav = document.querySelector('div.Hz2lF');
+    let NavLinks = document.body.querySelector('nav > div:last-child > div > div > div:last-child > div')//div._47KiJ 
+    let Suggestions = document.body.querySelector('main > section > div:last-child > div:nth-child(2)') //div._8UZ6e
+    let Stories = document.body.querySelector('main > section > div:first-child > div:first-child') //div.VideM
+    let Main = document.body.querySelector('[role=main]');
+    let Nav = document.body.querySelector('nav > div:last-child > div'); //div.Hz2lF
 
     //We load the settings from the local storage
     chrome.storage.sync.get(['options'], function(result) {
