@@ -129,12 +129,17 @@
   }
 
   .ag-save {
-    justify-content: space-around;
+    justify-content: center;
     display: flex;
     height: 32px;
     padding-top: 8px;
     align-items: flex-end;
     color: #838282;
+  }
+
+  .ag-save a {
+    color: white;
+    margin: 0 2px;
   }
 
   .ag-btn {
