@@ -5,7 +5,7 @@
     cursor: pointer;
   }
   #settings_link:hover, #about_link:hover {
-    color: #838282;
+    color: #a8a8a8;
   }
 
   button {
@@ -98,7 +98,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 8px 0 8px 0;
-    color: #838282;
+    color: #a8a8a8;
   }
   .ag-label:focus {
     outline: 1px solid #fff;
@@ -166,7 +166,7 @@
     height: 32px;
     padding-top: 8px;
     align-items: flex-end;
-    color: #838282;
+    color: #a8a8a8;
   }
 
   .ag-save a {
