@@ -10,7 +10,7 @@ chrome.storage.onChanged.addListener(ApplyAntigram);
 function ApplyAntigram() {
     //We select the navigation links and the explore feed
     let NavLinks = document.body.querySelector('nav > div:last-child > div > div > div:last-child > div')//div._47KiJ 
-    let Suggestions = document.body.querySelector('main > section > div:last-child > div:nth-child(2)') //div._8UZ6e
+    let Suggestions = document.body.querySelector('main > section > div:nth-child(3) > div:nth-child(2)') //div._8UZ6e
     let Stories = document.body.querySelector('main > section > div:first-child > div:first-child') //div.VideM
     let Main = document.body.querySelector('[role=main]');
     let Nav = document.body.querySelector('nav > div:last-child > div'); //div.Hz2lF
