@@ -69,11 +69,23 @@
     position: relative;
   }
 
-  .ag-h5::after, .ag-category::after {
+
+  .ag-h5::after {
     content: "";
     display: block;
     min-height: 0.5px;
     margin: 8px 0 0 0;
+    width: 100%;
+    transform: none;
+    min-width: 100%;
+    background-color: #4b4b4b;
+  }
+
+  .ag-category::after {
+    content: "";
+    display: block;
+    min-height: 0.5px;
+    margin: 0 0 0 0;
     width: 100%;
     transform: none;
     min-width: 100%;
@@ -105,14 +117,18 @@
     outline-offset: 0px;
     color:#AD3D3D; 
   }
-  .ag-label:active {
+  .ag-label:active, .ag-label:hover {
     outline: none;
     color:#AD3D3D; 
+    cursor: pointer;
+  }
+  .bg:active, .bg:hover {
+    outline: none;
+    color:#a8a8a8; 
+    cursor: default;
   }
 
-  .ag-label:last-child {
-    padding-bottom: 0;
-  }
+ 
 
   .ag-logo {
     width: 48px;
@@ -143,8 +159,7 @@
     outline: none;
   }
   .ag-color:focus-within {
-    outline: 1px solid #fff;
-    outline-offset:   0px;
+    box-shadow: 0px 0px 1px 2px #fff;
   }
 
   .ag-color::after {
@@ -153,9 +168,9 @@
     position: absolute;
     border-radius: 22px;
     border: 6px solid rgb(75, 75, 75);
-    top: 9px;
+    top: 8px;
     right: 78px;
-    min-height: 10px;
+    min-height: 12px;
     width: 28px;
     min-width: 28px;
   }
@@ -218,8 +233,9 @@
     width: 1;
     height: 1;
   }
-  .ag-toggle:focus-within {
-    outline: 1px solid #fff;
+  
+  .ag-toggle input:active {
+    outline:none;
     outline-offset:   0px;
   }
   
@@ -239,6 +255,7 @@
   
   .ag-toggle .slider:before {
     position: absolute;
+    z-index: 1;
     content: "";
     height: 18px;
     width: 18px;
@@ -249,17 +266,44 @@
     -webkit-transition: .4s;
     transition: .4s;
   }
+
+  .ag-toggle:after {
+    position: absolute;
+    content: "O";
+    z-index: 0;
+    right: 7px;
+    font-size: 9px;
+    border-radius: 50%;
+    bottom: 7px;
+    color: #a8a8a8;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .ag-toggle:before {
+    position: absolute;
+    content: "|";
+    font-size: 10px;
+    z-index: 1;
+    left: 10px;
+    border-radius: 50%;
+    bottom: 6px;
+    color: #a8a8a8;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
   
   .ag-toggle input:checked + .slider {
     background-color: #AD3D3D;
   }
-  
+
   .ag-toggle input:focus + .slider {
-    box-shadow: 0 0 1px #AD3D3D;
-  }
+    box-shadow: 0px 0px 1px 2px #fff;
+  } 
   
   .ag-toggle input:checked + .slider:before {
     -webkit-transform: translateX(14px);
     -ms-transform: translateX(14px);
     transform: translateX(14px);
   }
+  
