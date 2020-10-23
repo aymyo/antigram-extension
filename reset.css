@@ -8,6 +8,7 @@ button {
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
+    width: 100%;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 

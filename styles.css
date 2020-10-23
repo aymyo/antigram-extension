@@ -1,21 +1,7 @@
   #about_page {
     display: none;
   }
-  #settings_link, #about_link {
-    cursor: pointer;
-  }
-  #settings_link:hover, #about_link:hover {
-    color: #a8a8a8;
-  }
-
-  button {
-    padding: 8px 0;
-    width: 100%;
-    background-color: none;
-    display: flex;
-    background: none;
-  }
-
+ 
   .ag-body {
     display: flex;
     flex-direction: column;
@@ -41,13 +27,12 @@
     justify-content: center;
   }
 
-  .ag-manifesto {
-    font-size: 14px;
-    text-align: justify;
-    font-weight: 100;
-    line-height: 1.5;
-    color: #a8a8a8;
-  }
+  .ag-logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 8px;
+    margin-top: 8px;
+  }    
 
   .ag-h1 {
     margin:0;
@@ -68,24 +53,11 @@
     font-weight: 200;
     position: relative;
   }
-
-
   .ag-h5::after {
     content: "";
     display: block;
     min-height: 0.5px;
     margin: 8px 0 0 0;
-    width: 100%;
-    transform: none;
-    min-width: 100%;
-    background-color: #4b4b4b;
-  }
-
-  .ag-category::after {
-    content: "";
-    display: block;
-    min-height: 0.5px;
-    margin: 0 0 0 0;
     width: 100%;
     transform: none;
     min-width: 100%;
@@ -103,6 +75,17 @@
     margin: 0 4px 0 0;
   }
 
+  .ag-category::after {
+    content: "";
+    display: block;
+    min-height: 0.5px;
+    margin: 0 0 0 0;
+    width: 100%;
+    transform: none;
+    min-width: 100%;
+    background-color: #4b4b4b;
+  }
+
   .ag-label {
     font-size: 14px;
     display: flex;
@@ -114,8 +97,9 @@
   }
   .ag-label:focus {
     outline: 1px solid #fff;
-    outline-offset: 0px;
-    color:#AD3D3D; 
+    color:#AD3D3D;
+    -webkit-transition: .4s;
+    transition: .4s;
   }
   .ag-label:active, .ag-label:hover {
     outline: none;
@@ -126,25 +110,6 @@
     outline: none;
     color:#a8a8a8; 
     cursor: default;
-  }
-
- 
-
-  .ag-logo {
-    width: 48px;
-    height: 48px;
-    margin-right: 8px;
-    margin-top: 8px;
-  }     
-
-  .ag-about {
-    margin: 0 6px 0 auto;
-  }
-
-
-
-  #about_link:hover, #settings_link:hover {
-    color:#AD3D3D;
   }
 
   .ag-color {
@@ -161,7 +126,6 @@
   .ag-color:focus-within {
     box-shadow: 0px 0px 1px 2px #fff;
   }
-
   .ag-color::after {
     content: "";
     display: block;
@@ -175,6 +139,10 @@
     min-width: 28px;
   }
 
+  .ag-about {
+    margin: 0 6px 0 auto;
+  }
+
   .ag-save {
     justify-content: center;
     display: flex;
@@ -183,28 +151,30 @@
     align-items: flex-end;
     color: #a8a8a8;
   }
-
-  .ag-save a {
-    color: white;
+  .ag-save:focus {
+    outline: 1px solid #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .ag-save a{
     margin: 0 2px;
+    color: #a8a8a8;
+  }
+  .ag-save a:hover {
+    color: white;
   }
 
-  .ag-btn {
-    height: 32px;
-    display: flex;
-    font-size: 18px;
-    justify-content: space-evenly;
-    background-color: #AD3D3D;
-    width: 96px;
-    outline: none;
-    border-radius: 8px;
-    margin: 32px 0 0 0;
-    align-items: center;
-    cursor: pointer;
+  .ag-manifesto {
+    font-size: 14px;
+    text-align: justify;
+    font-weight: 100;
+    line-height: 1.5;
+    color: #a8a8a8;
   }
-
-  .ag-btn:active {
-    background-color: #702727;
+  .ag-manifesto:focus {
+    outline: 1px solid #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
   }
 
   .ag-sup {
@@ -232,11 +202,6 @@
     opacity: 0;
     width: 1;
     height: 1;
-  }
-  
-  .ag-toggle input:active {
-    outline:none;
-    outline-offset:   0px;
   }
   
   /* The slider */
@@ -267,6 +232,7 @@
     transition: .4s;
   }
 
+  /* OFF symbol */
   .ag-toggle:after {
     position: absolute;
     content: "O";
@@ -276,10 +242,11 @@
     border-radius: 50%;
     bottom: 7px;
     color: #a8a8a8;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .2s;
+    transition: .2s;
   }
-
+  
+  /* ON symbol */
   .ag-toggle:before {
     position: absolute;
     content: "|";
@@ -289,8 +256,8 @@
     border-radius: 50%;
     bottom: 6px;
     color: #a8a8a8;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .2s;
+    transition: .2s;
   }
   
   .ag-toggle input:checked + .slider {
