@@ -6,13 +6,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sansita+Swashed&display=swap" 
     rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
 
   </head>
 
   <body class="ag-body">
-    <div class="ag-container" id="settings_page">
-      <header class="ag-header">
+    <div class="ag-container" id="settings_page" aria-label="antigram settings" >
+      <header class="ag-header" >
         <img class="ag-logo" src="/images/ag128.png" 
         alt="Antigram Logo">
         <h1 class="ag-h1">Antigram</h1>
@@ -26,62 +27,62 @@
           Blocker
         </h5>
 
-        <label class="ag-label">
+        <label class="ag-label" tabindex="0" for="explore">
           Hide Explore
           <span class="ag-toggle">
-            <input type="checkbox" id="explore">
+            <input type="checkbox" id="explore" name="explore">
             <span class="slider"></span>
           </span>
         </label>
 
-        <label class="ag-label">
+        <label class="ag-label" tabindex="0" for="suggestions">
           Hide Suggestions
           <span class="ag-toggle">
-            <input type="checkbox" id="suggestions">
+            <input type="checkbox" id="suggestions" name="suggestions">
             <span class="slider"></span>
           </span>
         </label>
 
-        <label class="ag-label">
+        <label class="ag-label" tabindex="0" for="stories">
           Hide Stories
           <span class="ag-toggle">
-            <input type="checkbox" id="stories">
+            <input type="checkbox" id="stories" name="stories">
             <span class="slider"></span>
           </span>
         </label>
       </div>
 
-      <div class="ag-category">
+      <div class="ag-category" >
         <h5 class="ag-h5">
           <i class="fa fa-eye" aria-hidden="true"></i>
           Appearence
         </h5>
 
-        <span class="ag-label">
+        <div class="ag-label">
           Background color
-          <input class="ag-color" type="color" id="bg_color">
-          <label class="ag-toggle">
-            <input type="checkbox" id="color">
+          <input class="ag-color" type="color" id="bg_color" tabindex="0"> 
+          <span class="ag-toggle" >
+            <input type="checkbox" id="color" title="Change Background Color" >
             <span class="slider"></span>
-          </label>
-        </span>
+          </span>
+        </div>
       </div>
 
 
-      <h5 class="ag-h5" id="about_link">
+      <button class="about-h5" id="about_link" tabindex="0">
         <i class="fa fa-info-circle" aria-hidden="true"></i>
         About
         <i class="fa fa-external-link ag-about"></i>
-      </h5>
+      </button>
 
-      <div class="ag-save" id="saved_text">
+      <div class="ag-save" id="saved_text" tabindex="0">
     
       </div>
 
       
     </div>
 
-    <div class="ag-container" id="about_page">
+    <div class="ag-container" id="about_page" aria-label="about antigram">
       <header class="ag-header">
         <img class="ag-logo" src="/images/ag128.png" 
         alt="Antigram Logo">
@@ -91,9 +92,9 @@
       <h3 class="ag-h3">About</h3>
 
       <div class="ag-category">
-        <p class="ag-manifesto">
+        <p class="ag-manifesto"  tabindex="0">
           Antigram is a chrome extension that gives the user tools to fight back Instagram's features designed to be addictive. 
-          It was made on my free time with the objective of being able to check what were my friends up to without falling 
+          It was made on my free time with the objective of being able to check what were my friends up to, without falling 
           into a blackhole of meaningless content. 
           <br><br>
           Toggle to hide or show instagram's functionalities, they will be updated instantly. Antigram is free and it does not track you.
@@ -130,13 +131,13 @@
         </a>
       </div>
 
-      <h5 class="ag-h5" id="settings_link">
+      <button class="about-h5" id="settings_link">
         <i class="fa fa-cog" aria-hidden="true"></i>
         Back to Settings
         <i class="fa fa-external-link ag-about"></i>
-      </h5>
+      </button>
 
-      <div class="ag-save" id="saved_text">
+      <div class="ag-save" id="saved_text" tabindex="0">
         made by <a href="https://github.com/aymyo" target="_blank">aymyo</a> 
         and 
         <a href="https://github.com/aymyo/antigram-extension/graphs/contributors" 

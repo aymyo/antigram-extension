@@ -8,6 +8,14 @@
     color: #838282;
   }
 
+  button {
+    padding: 8px 0;
+    width: 100%;
+    background-color: none;
+    display: flex;
+    background: none;
+  }
+
   .ag-body {
     display: flex;
     flex-direction: column;
@@ -69,7 +77,18 @@
     width: 100%;
     transform: none;
     min-width: 100%;
-    background-color: rgb(75, 75, 75);
+    background-color: #4b4b4b;
+  }
+
+  .about-h5 {
+    border-bottom: solid 0.5px #4b4b4b;
+    font-size: 16px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+  }
+  .about-h5 .fa:first-child {
+    margin: 0 4px 0 0;
   }
 
   .ag-label {
@@ -81,6 +100,15 @@
     padding: 8px 0 8px 0;
     color: #838282;
   }
+  .ag-label:focus {
+    outline: 1px solid #fff;
+    outline-offset: 0px;
+    color:#AD3D3D; 
+  }
+  .ag-label:active {
+    outline: none;
+    color:#AD3D3D; 
+  }
 
   .ag-label:last-child {
     padding-bottom: 0;
@@ -91,13 +119,13 @@
     height: 48px;
     margin-right: 8px;
     margin-top: 8px;
-  }
+  }     
 
   .ag-about {
-    position: absolute;
-    right: 8px;
-    top: 2px;
+    margin: 0 6px 0 auto;
   }
+
+
 
   #about_link:hover, #settings_link:hover {
     color:#AD3D3D;
@@ -114,7 +142,11 @@
     cursor: pointer;
     outline: none;
   }
-  
+  .ag-color:focus-within {
+    outline: 1px solid #fff;
+    outline-offset:   0px;
+  }
+
   .ag-color::after {
     content: "";
     display: block;
@@ -183,8 +215,12 @@
   /* Hide default HTML checkbox */
   .ag-toggle  input {
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 1;
+    height: 1;
+  }
+  .ag-toggle:focus-within {
+    outline: 1px solid #fff;
+    outline-offset:   0px;
   }
   
   /* The slider */
