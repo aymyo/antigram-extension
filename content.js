@@ -12,6 +12,21 @@ let Nav;
 //Applies the changes whenever the options are modified
 chrome.storage.onChanged.addListener(ApplyAntigram);
 
+//This function checks if the path the user is in needs to apply Antigram or not
+function CheckPath(){
+    if( window.location.pathname.slice(0,7) == "/about/" ||
+        window.location.pathname.slice(0,11) == "/developer/"
+        ){
+        console.log("This path does not need Antigram.")
+    } else {
+        try{
+            ApplyAntigram();
+        } catch(error) {
+            console.log("Antigram Error 0 -" + error);
+        }
+    }
+}
+
 //Applies Antigram features depending on the options selected
 function ApplyAntigram() {
     //We select the navigation links and the explore feed depending on the url (dom changes)
@@ -50,13 +65,15 @@ function ApplyAntigram() {
         //Hides/Shows Explore if it exists on the page
         if(option_values[0] && NavLinks != null){
             NavLinks.children[2].style.display = "none";
-            if (window.location.pathname == "/explore/"){
+            if (window.location.pathname.slice(0,9) == "/explore/" ||
+            window.location.pathname.slice(0,11) == "/directory/"){
                 Main.style.display = "none";
             }
         }
         else if(NavLinks != null){
             NavLinks.children[2].style.display = "block";
-            if (window.location.pathname == "/explore/"){
+            if (window.location.pathname.slice(0,9) == "/explore/" ||
+            window.location.pathname.slice(0,11) == "/directory/"){
                 Main.style.display = "block";
             }
         }
@@ -105,16 +122,13 @@ function ApplyAntigram() {
 
 // We call the function periodically and after a delay to let the components load.
 // TO DO: think for a more efficient way to do this.
-
-if(window.location.pathname != ""){
-    try{
-    setInterval(ApplyAntigram, 1000);
-    } catch(error) {
-        console.log("Antigram Error 0 -" + error);
-    }
-} else {
-    console.log("This path does not need Antigram.")
+try{
+setInterval(CheckPath, 1000);
+} catch(error) {
+    console.log("Antigram Error 1000 -" + error);
 }
+
+
 /*
 let applyCallInterval = setInterval(ApplyAntigram, 500); 
 

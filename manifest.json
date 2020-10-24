@@ -27,7 +27,7 @@
     "content_scripts": [{
         "css": ["styles.css"],
         "js": ["content.js"],
-        "matches": ["*://*.instagram.com/*"],
+        "matches": ["*://www.instagram.com/*"],
         "run_at":  "document_idle"
       }],
     "options_page": "options.html",
