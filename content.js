@@ -59,7 +59,7 @@ function ApplyAntigram() {
         try {
             Main = document.body.querySelector('section > div > div');
         } catch (error) {console.log("Antigram Selector Error 3 -" + error);}
-        ChangeColor(Main, option_values[4], "#fff", option_values[3]);
+        ChangeColor(Main, option_values[4], "#262626", option_values[3]);
     
     //Explore and Directory Sections
     } else if(path.slice(0,9) == "/explore/" || path.slice(0,11) == "/directory/"){
