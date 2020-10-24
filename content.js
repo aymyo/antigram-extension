@@ -3,6 +3,7 @@
 //[explore-toggle,suggestions-toggle,stories,color-toggle,hexadecimal color code]
 let option_values;
 
+//DOM elements
 let NavLinks;
 let Suggestions;
 let Stories;
