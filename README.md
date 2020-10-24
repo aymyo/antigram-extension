@@ -6,12 +6,11 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 - Explore Blocker
 - Stories Blocker
 - Suggestions Blocker
-- Background color modification
+- Background Color modification
 
 ##### Future features?
 - Better feed visualization
-- Accessible options menu
-- ... (I accept suggestions)
+- ... (I accept [suggestions](https://github.com/aymyo/antigram-extension/issues))
 
 ### Technology Used
 - Javascript and plain CSS
