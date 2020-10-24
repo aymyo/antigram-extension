@@ -1,6 +1,6 @@
 {
     "name": "Antigram Web",
-    "version": "0.7",
+    "version": "0.9",
     "description": "Blocks Instagram's Explore section to avoid procastination.",
     "background": {
         "scripts": ["background.js"],
