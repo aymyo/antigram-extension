@@ -1,7 +1,7 @@
 {
     "name": "Antigram Web",
-    "version": "0.9",
-    "description": "Blocks Instagram's Explore section to avoid procastination.",
+    "version": "0.0.1",
+    "description": "Antigram is a chrome extension that gives the user tools to fight back Instagram's features designed to be addictive.",
     "background": {
         "scripts": ["background.js"],
         "persistent": false
