@@ -85,6 +85,7 @@ function ApplyAntigram() {
         BlockElement(Stories, option_values[2]);
         ChangeColor(Main, option_values[4], "#fff", option_values[3]);
         ChangeColor(Nav, option_values[4], "#fafafa", option_values[3]);
+        ChangeColor(Stories, option_values[4], "#fff", option_values[3]);
 
     //General Case
     } else {
@@ -107,7 +108,6 @@ chrome.storage.onChanged.addListener(ApplyAntigram);
 // We call the function periodically and after a delay to let the components load.
 // TO DO: think for a more efficient way to do this.
 setInterval(ApplyAntigram, 1000);
-
 
 /*
 let applyCallInterval = setInterval(ApplyAntigram, 500); 
