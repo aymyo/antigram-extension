@@ -45,7 +45,7 @@ function ApplyAntigram() {
         console.log("This path does not need Antigram.");
 
     }//Direct Messages Section
-    else if(path == "/direct/inbox/"){ 
+    else if(path.slice(0,8) == "/direct/"){ 
         try {
             NavLinks = document.body.querySelector('section > div> div:first-child > div > div:last-child > div')//div._47KiJ 
             Main = document.body.querySelector('section > div > div:last-child > div');
