@@ -35,5 +35,5 @@ If it does not work, maybe it is because Instagram updated the web version and t
 
 [logo]: https://github.com/aymyo/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
 
-##### Sources
-This extension is mostly inspired by Jord West's [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you are a Facebook user.
+##### Sources and recommendations
+This extension is mostly inspired by Jord West's [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you are a Facebook user. Additionally, I also recommend [DF Youtube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna?hl=en-US) to have a better experience using Youtube.
