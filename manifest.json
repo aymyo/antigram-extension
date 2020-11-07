@@ -1,7 +1,7 @@
 {
-    "name": "Antigram Web",
-    "version": "0.7",
-    "description": "Blocks Instagram's Explore section to avoid procastination.",
+    "name": "Antigram - Explore Blocker",
+    "version": "0.0.1",
+    "description": "Antigram is a browser extension that gives the user tools to fight back Instagram's features designed to be addictive.",
     "background": {
         "scripts": ["background.js"],
         "persistent": false
@@ -27,7 +27,7 @@
     "content_scripts": [{
         "css": ["styles.css"],
         "js": ["content.js"],
-        "matches": ["*://*.instagram.com/*"],
+        "matches": ["*://www.instagram.com/*"],
         "run_at":  "document_idle"
       }],
     "options_page": "options.html",
