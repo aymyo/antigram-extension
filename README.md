@@ -16,7 +16,7 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 - Javascript and plain CSS
 
 ### Setup
-Download from [Chrome Store](https://chrome.google.com/webstore/category/extensions?hl=en-US "Chrome Store") or install it manually:
+Download from [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh?hl=es "Chrome Store") or install it manually:
 
 ```
 > Extract the content of the ZIP folder
