@@ -1,22 +1,22 @@
 # Antigram ![alt text][logo] Chrome Extension 
 
-Antigram is a chrome extension that gives the user tools to fight back Instagram's features designed to be addictive. It was made on my free time with the objective of being able to check what were my friends up to without falling into a blackhole of meaningless content.
+Antigram is a chrome extension that gives the user tools to fight back Instagram's addictive features. It was made on my free time with the objective of being able to check what were my friends up to without falling into a blackhole of meaningless content.
 
 ##### Current features
 - Explore Blocker
 - Stories Blocker
 - Suggestions Blocker
+- Feed Blocker
 - Background Color modification
 
 ##### Future features?
-- Hide Feed
 - Lock Settings
 - Set timer
 - Better feed visualization
 - ... (I accept [suggestions](https://github.com/aymyo/antigram-extension/issues))
 
 ### Technology Used
-- Javascript and plain CSS
+- Javascript, HTML and plain CSS
 
 ### Setup
 Download it from [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh?hl=es "Chrome Store") or install it manually:
