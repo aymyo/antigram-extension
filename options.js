@@ -5,6 +5,7 @@ let suggestions = document.getElementById('suggestions');
 let stories = document.getElementById('stories');
 let bg_color = document.getElementById('bg_color');
 let color = document.getElementById('color');
+let feed = document.getElementById('feed');
 let saved_text = document.getElementById('saved_text');
 
 let about = document.getElementById('about_link');
@@ -13,7 +14,7 @@ let about_showing = false;
 
 //Updates option values to the chrome storage
 function updateOptions() {
-  let option_values = [explore.checked,suggestions.checked,stories.checked,color.checked, bg_color.value];
+  let option_values = [explore.checked,suggestions.checked,stories.checked,color.checked, bg_color.value, feed.checked];
   chrome.storage.sync.set({options: option_values}, function() {
   console.log('Value is set to ' + option_values);
   });
@@ -29,6 +30,7 @@ function getOptions() {
     stories.checked = result.options[2];
     color.checked = result.options[3];
     bg_color.value = result.options[4];
+    feed.checked = result.options[5];
   });
 }
 
@@ -53,6 +55,8 @@ suggestions.addEventListener("change", updateOptions);
 stories.addEventListener("change", updateOptions);
 color.addEventListener("change", updateOptions);
 bg_color.addEventListener("change", updateOptions);
+feed.addEventListener("change", updateOptions);
+
 
 settings.addEventListener("click", toggleAbout);
 about.addEventListener("click", toggleAbout);

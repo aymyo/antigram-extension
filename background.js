@@ -5,7 +5,7 @@ chrome.pageAction.onClicked.addListener(() => {
 });
 
 //Defines the default options values and saves them in the local browser storage.
-let option_values = [true,true, false, false, "#fafafa"];
+let option_values = [true,true, false, false, "#fafafa", false];
 chrome.storage.sync.set({options: option_values}, function() {
 console.log('Initial value is set to ' + option_values);
 });
