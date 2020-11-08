@@ -1,3 +1,4 @@
+let debug = false;
 
 //An array that will store the option values: 
 //[explore-toggle,suggestions-toggle,stories,color-toggle,hexadecimal color code]
@@ -12,8 +13,17 @@ let Nav;
 let Feed;
 let FeedLoader;
 
+function DefaultOptions(){
+    if(!option_values){
+        let option_values = [true,true, false, false, "#fafafa", false];   
+        chrome.storage.sync.set({options: option_values}, function() {
+        console.log("Antigram's default values set to:" + option_values);
+        });
+    }
+}
+
 //This function gets the most recent option values
-function UpdateOptions(debug){
+function UpdateOptions(){
     chrome.storage.sync.get(['options'], function(result) {
         option_values = result.options;
         if(debug){console.log(option_values);}
@@ -106,6 +116,7 @@ function ApplyAntigram() {
     }
 }
 
+DefaultOptions();
 UpdateOptions();
 
 //Applies the changes whenever the options are modified
