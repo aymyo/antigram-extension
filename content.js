@@ -9,6 +9,8 @@ let Suggestions;
 let Stories;
 let Main;
 let Nav;
+let Feed;
+let FeedLoader;
 
 //This function gets the most recent option values
 function UpdateOptions(debug){
@@ -79,10 +81,14 @@ function ApplyAntigram() {
             Stories = document.body.querySelector('main > section > div:first-child > div:first-child') //div.VideM
             Main = document.body.querySelector('[role=main]');
             Nav = document.body.querySelector('nav > div:last-child > div'); //div.Hz2lF
+            Feed = document.body.querySelector('main > section > div:first-child > div:nth-child(2)')
+            FeedLoader = document.body.querySelector('main > section > div:first-child > div:nth-child(3)')
         } catch(error) {console.log("Antigram Selector Error 5 -" + error);}
         BlockElement(NavLinks.children[2], option_values[0]);
         BlockElement(Suggestions, option_values[1]);
         BlockElement(Stories, option_values[2]);
+        BlockElement(Feed, option_values[5]);
+        BlockElement(FeedLoader, option_values[5]);
         ChangeColor(Main, option_values[4], "#fff", option_values[3]);
         ChangeColor(Nav, option_values[4], "#fafafa", option_values[3]);
         ChangeColor(Stories, option_values[4], "#fff", option_values[3]);
