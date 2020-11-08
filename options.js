@@ -16,7 +16,7 @@ let about_showing = false;
 function updateOptions() {
   let option_values = [explore.checked,suggestions.checked,stories.checked,color.checked, bg_color.value, feed.checked];
   chrome.storage.sync.set({options: option_values}, function() {
-  console.log('Value is set to ' + option_values);
+    console.log('Value is set to ' + option_values);
   });
   saved_text.innerHTML = "(Changes were saved \u270c)";
 }
