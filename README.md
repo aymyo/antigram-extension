@@ -19,7 +19,7 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 - Javascript, HTML and plain CSS
 
 ### Setup
-Download it from [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh?hl=es "Chrome Store") or install it manually:
+Download it from [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh "Chrome Store") or install it manually:
 
 ```
 > Extract the content from the ZIP folder
@@ -39,4 +39,4 @@ If it does not work, maybe it is because Instagram updated the web version and t
 [logo]: https://github.com/aymyo/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
 
 ##### Sources and recommendations
-This extension is mostly inspired by Jord West's [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you are a Facebook user. Additionally, I also recommend [DF Youtube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna?hl=en-US) to have a better experience using Youtube.
+This extension is mostly inspired by Jord West's [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you are a Facebook user. Additionally, I also recommend [DF Youtube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna) to have a better experience using Youtube.
