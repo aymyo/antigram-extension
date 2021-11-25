@@ -92,7 +92,7 @@ function ApplyAntigram() {
             Feed = document.body.querySelector('main > section > div:first-child > div:nth-child(2)')
             FeedLoader = document.body.querySelector('main > section > div:first-child > div:nth-child(3)')
         } catch(error) {console.log("Antigram Selector Error 5 -" + error);}
-        BlockElement(NavLinks.children[2], option_values[0]);
+        BlockElement(NavLinks.children[3], option_values[0]);
         BlockElement(Suggestions, option_values[1]);
         BlockElement(Stories, option_values[2]);
         BlockElement(Feed, option_values[5]);
@@ -108,7 +108,7 @@ function ApplyAntigram() {
             Main = document.body.querySelector('[role=main]');
             Nav = document.body.querySelector('nav > div:last-child > div'); //div.Hz2lF
         } catch(error) {console.log("Antigram Selector Error 1 -" + error);}
-        BlockElement(NavLinks.children[2], option_values[0]);
+        BlockElement(NavLinks.children[3], option_values[0]);
         ChangeColor(Main, option_values[4], "#fff", option_values[3]);
         ChangeColor(Nav, option_values[4], "#fafafa", option_values[3]);
     }
