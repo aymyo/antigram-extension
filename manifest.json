@@ -1,6 +1,6 @@
 {
     "name": "Antigram - Explore Blocker",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Browser extension to fight back Instagram's addictive features.",
     "background": {
         "scripts": ["background.js"],
