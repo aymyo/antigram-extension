@@ -36,13 +36,13 @@ const updateOptions = () => {
   chrome.storage.sync.get(["options"], function (result) {
     option_values = result.options;
     if (DEBUG_ON) {
-      console.log(option_values);
+      console.info(option_values);
     }
     //Default initial values
     if (!option_values) {
       let option_values = [true, true, false, false, "#fafafa", false];
       chrome.storage.sync.set({ options: option_values }, function () {
-        console.log("Antigram's default values set to:" + option_values);
+        console.info("Antigram's default values set to:" + option_values);
       });
     }
   });
@@ -73,7 +73,7 @@ function ApplyAntigram() {
 
   //Where Antigram is not needed
   if (path.slice(0, 7) == "/about/" || path.slice(0, 11) == "/developer/") {
-    console.log("This path does not need Antigram.");
+    console.info("This path does not need Antigram.");
   } //Direct Messages Section
   else if (path.slice(0, 8) == "/direct/") {
     try {
@@ -84,7 +84,7 @@ function ApplyAntigram() {
       changeColor(navbarElement, option_values[4], "#fafafa", option_values[3]);
       changeColor(mainSectionElement, option_values[4], "#fff", option_values[3]);
     } catch (error) {
-      console.log("Antigram Selector Error 2 -" + error);
+      console.error("Antigram Selector Error 2 -" + error);
     }
 
     //Stories Section
@@ -93,7 +93,7 @@ function ApplyAntigram() {
       mainSectionElement = document.body.querySelector("section > div > div");
       changeColor(mainSectionElement, option_values[4], "#262626", option_values[3]);
     } catch (error) {
-      console.log("Antigram Selector Error 3 -" + error);
+      console.error("Antigram Selector Error 3 -" + error);
     }
 
     //Explore and Directory Sections
@@ -104,7 +104,7 @@ function ApplyAntigram() {
       blockElement(mainSectionElement, option_values[0]);
       changeColor(navbarElement, option_values[4], "#fafafa", option_values[3]);
     } catch (error) {
-      console.log("Antigram Selector Error 4 -" + error);
+      console.error("Antigram Selector Error 4 -" + error);
     }
 
     //Home Section
@@ -125,7 +125,7 @@ function ApplyAntigram() {
       changeColor(feedBackgroundElement, option_values[4], "#fff", option_values[3]);
       changeColor(selectStoriesBox(), option_values[4], "#fff", option_values[3]);
     } catch (error) {
-      console.log("Antigram Selector Error 5 -" + error);
+      console.error("Antigram Selector Error 5 -" + error);
     }
 
     //General Case
@@ -137,7 +137,7 @@ function ApplyAntigram() {
       changeColor(mainSectionElement, option_values[4], "#fff", option_values[3]);
       changeColor(navbarElement, option_values[4], "#fafafa", option_values[3]);
     } catch (error) {
-      console.log("Antigram Selector Error 1 -" + error);
+      console.error("Antigram Selector Error 1 -" + error);
     }
   }
 }
