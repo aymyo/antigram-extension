@@ -73,7 +73,8 @@ function ApplyAntigram() {
     try {
       mainSectionElement = document.body.querySelector("section > div > div:last-child > div");
       navbarElement = document.body.querySelector("section > div > div:first-child"); //div.Hz2lF
-      blockElement(selectNavLinkExplore(), option_values[0]);
+      const exploreLinkInDirectPage = document.querySelector('section a[href*="/explore/"]');
+      blockElement(exploreLinkInDirectPage, option_values[0]);
       changeColor(navbarElement, option_values[4], "#fafafa", option_values[3]);
       changeColor(mainSectionElement, option_values[4], "#fff", option_values[3]);
     } catch (error) {

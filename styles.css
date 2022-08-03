@@ -278,7 +278,8 @@
 
 .disclaimer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 8px;
   border: 1px solid;
   border-color: #ad3d3d;
   border-radius: 8px;
