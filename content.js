@@ -1,4 +1,4 @@
-let DEBUG_ON = false;
+const DEBUG_ON = true;
 
 //An array that will store the option values:
 //[explore-toggle,suggestions-toggle,stories,color-toggle,hexadecimal color code]
@@ -25,18 +25,12 @@ const selectStoriesArrow = () =>
 const selectFeedBox = () => document.querySelector("article").closest("div");
 const selectFeedLoader = () => document.querySelector('[data-visualcompletion="loading-state"]');
 
-//IDEA: bloquejar crides a la API
-//IDEA: injectar nou header
-//IDEA: get info from github to communicate with users
-//IDEA: use testing playground
-//IDEA: get the selectors from a file calling an API, so we can update them quickly (might break chromes policy)
-
 //This function gets the most recent option values
 const updateOptions = () => {
   chrome.storage.sync.get(["options"], function (result) {
     option_values = result.options;
     if (DEBUG_ON) {
-      console.info(option_values);
+      console.info("Current options", option_values);
     }
     //Default initial values
     if (!option_values) {
@@ -79,7 +73,6 @@ function ApplyAntigram() {
     try {
       mainSectionElement = document.body.querySelector("section > div > div:last-child > div");
       navbarElement = document.body.querySelector("section > div > div:first-child"); //div.Hz2lF
-
       blockElement(selectNavLinkExplore(), option_values[0]);
       changeColor(navbarElement, option_values[4], "#fafafa", option_values[3]);
       changeColor(mainSectionElement, option_values[4], "#fff", option_values[3]);
