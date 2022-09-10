@@ -1,7 +1,9 @@
 //This function adds a listener to the extension icon, that when clicked, opens directly the options page.
-chrome.tabs.onActivated.addListener(function (tabs) {     chrome.pageAction.show(tabs.tabId); });
+chrome.tabs.onActivated.addListener(function (tabs) {
+  chrome.pageAction.show(tabs.tabId);
+});
 chrome.pageAction.onClicked.addListener(() => {
-	chrome.runtime.openOptionsPage();
+  chrome.runtime.openOptionsPage();
 });
 
 //Defines the default options values and saves them in the local browser storage.
