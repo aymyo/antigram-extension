@@ -5,9 +5,10 @@
   "main": "src/app/background.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./scripts/build.js",
+    "build": "tsc && node scripts/build.js",
+    "dev": "vite",
     "lint": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config .prettierrc.json",
     "precommit": "npm run format && npm run lint && npm run test"
   },
   "husky": {
@@ -27,6 +28,9 @@
   },
   "homepage": "https://github.com/aymyo/antigram-extension#readme",
   "devDependencies": {
+    "@types/babel__core": "^7.1.19",
+    "@types/chrome": "0.0.196",
+    "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "esbuild": "^0.15.7",
@@ -37,7 +41,11 @@
     "glob": "^8.0.3",
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.3",
-    "@types/chrome": "0.0.196"
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "solid-js": "^1.5.4",
+    "vite": "^3.1.0",
+    "vite-plugin-solid": "^2.3.0"
   }
 }
