@@ -1,8 +1,8 @@
 import { Component, createSignal } from "solid-js";
-import { OptionsState } from "../hooks/useStorage";
+import { Settings } from "../util/storage";
 
 const Options: Component = () => {
-  const [] = createSignal<OptionsState>();
+  const [] = createSignal<Settings>();
   return (
     <div class="ab-body">
       <div class="disclaimer">
