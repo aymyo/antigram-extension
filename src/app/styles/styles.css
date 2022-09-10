@@ -1,8 +1,10 @@
+
 #about_page {
   display: none;
 }
 
 .ag-body {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

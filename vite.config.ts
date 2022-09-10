@@ -9,5 +9,5 @@ export default defineConfig({
     outDir: "../build",
     emptyOutDir: true
   },
-  root: "src"
+  root: "src/app"
 });
