@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "commonjs",
-    "target": "es6",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "sourceMap": true,
-    "rootDir": "src",
-    "outDir": "dist/js",
-    "noEmitOnError": true,
     "typeRoots": ["node_modules/@types"],
-    "resolveJsonModule": true
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "noEmit": true
   }
 }

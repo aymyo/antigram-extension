@@ -1,4 +1,4 @@
-import { hideElement } from "./helpers/modifiers";
+import { hideElement } from "../extension/helpers/modifiers";
 
 //We get the elements that will trigger functions
 const explore = document.getElementById("explore") as HTMLInputElement;
