@@ -1,5 +1,4 @@
-import { Component, createResource, createSignal } from "solid-js";
-import { defaultSettings, getSettings } from "../../../util/storage";
+import { Component } from "solid-js";
 
 interface SwitchInputProps {
   id: string;

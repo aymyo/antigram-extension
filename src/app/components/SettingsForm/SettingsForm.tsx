@@ -1,16 +1,20 @@
 import { Component, createResource, createSignal, For } from "solid-js";
-import { defaultSettings, getSettings } from "../../../util/storage";
+import { useSettings } from "../../data/settings";
 import { SwitchInput } from "../SwitchInput";
 
 const SettingsForm: Component = () => {
-  const [settings, { refetch }] = createResource(getSettings, { initialValue: defaultSettings });
-  const { hideExplore, hideFeed, hideStories, hideSuggestions, bgColor } = settings();
+  const { settings, toggleHideExplore, toggleHideStories, toggleHideFeed, toggleHideSuggestions } =
+    useSettings();
 
   const inputs = [
-    { label: "Hide Explore", value: hideExplore },
-    { label: "Hide Suggestions", value: hideSuggestions },
-    { label: "Hide Stories", value: hideStories },
-    { label: "Hide Feed", value: hideFeed }
+    { label: "Hide Explore", checked: settings.hideExplore, onChange: toggleHideExplore },
+    {
+      label: "Hide Suggestions",
+      checked: settings.hideSuggestions,
+      onChange: toggleHideSuggestions
+    },
+    { label: "Hide Stories", checked: settings.hideStories, onChange: toggleHideStories },
+    { label: "Hide Feed", checked: settings.hideFeed, onChange: toggleHideFeed }
   ];
 
   return (
@@ -21,13 +25,7 @@ const SettingsForm: Component = () => {
       </span>
 
       <For each={inputs}>
-        {(input) => (
-          <SwitchInput
-            id={input.label.replace(" ", "")}
-            label={input.label}
-            checked={input.value}
-          />
-        )}
+        {(input) => <SwitchInput id={input.label.replace(" ", "")} {...input} />}
       </For>
 
       <span class="section-h">
