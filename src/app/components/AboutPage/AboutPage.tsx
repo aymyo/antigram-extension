@@ -2,26 +2,32 @@ import { Component, createSignal } from "solid-js";
 
 const AboutPage: Component = () => {
   return (
-    <div>
+    <>
+      <h2 class="text-xl mb-4">About Antigram</h2>
+      <div>
+        Antigram is a chrome extension that gives the user tools to fight back Instagram's addictive
+        features. It was made on my free time with the objective of being able to check what were my
+        friends up to, without falling into a black hole of meaningless content.
+      </div>
+      <br />
+      <div>Antigram is free and it does not track you.</div>
+    </>
+  );
+};
+
+export { AboutPage };
+
+/*
+
+ <div>
       Holo
-      <div class="ag-container" id="about_page" aria-label="about antigram">
-        <header class="ag-header">
-          <img class="ag-logo" src="/images/ag128.png" alt="Antigram Logo" />
-          <h1 class="ag-h1">Antigram</h1>
-        </header>
-
-        <h3 class="ag-h3">About</h3>
-
+     
         <div class="ag-category">
           <p class="ag-manifesto" tabindex="0">
-            Antigram is a chrome extension that gives the user tools to fight back Instagram's
-            addictive features. It was made on my free time with the objective of being able to
-            check what were my friends up to, without falling into a blackhole of meaningless
-            content.
+           
             <br />
             <br />
-            Toggle to hide or show instagram's functionalities, they will be updated instantly.
-            Antigram is free and it does not track you.
+            
           </p>
 
           <h5 class="ag-h5">
@@ -74,7 +80,4 @@ const AboutPage: Component = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export { AboutPage };
+*/

@@ -65,34 +65,6 @@
   transition: 0.4s;
 }
 
-/* OFF symbol */
-.switchToggle:after {
-  position: absolute;
-  content: "O";
-  z-index: 0;
-  right: 7px;
-  font-size: 9px;
-  border-radius: 50%;
-  bottom: 7px;
-  color: #a8a8a8;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-/* ON symbol */
-.switchToggle:before {
-  position: absolute;
-  content: "|";
-  font-size: 10px;
-  z-index: 1;
-  left: 10px;
-  border-radius: 50%;
-  bottom: 6px;
-  color: #a8a8a8;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
 .switchToggle input:checked + .slider {
   background-color: #ad3d3d;
 }

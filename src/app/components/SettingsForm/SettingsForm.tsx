@@ -18,33 +18,41 @@ const SettingsForm: Component = () => {
   ];
 
   return (
-    <form title="blockerForm">
-      <span class="section-h">
-        <i class="fa fa-ban" aria-hidden="true"></i>
-        <h2>Block sections</h2>
-      </span>
+    <form title="SettingsForm">
+      <div class="mb-8">
+        Toggle to hide or show Instagram's functionalities, they will be updated instantly.
+      </div>
+
+      <FormGroupTitle icon="ban" title="Block sections" />
 
       <For each={inputs}>
         {(input) => <SwitchInput id={input.label.replace(" ", "")} {...input} />}
       </For>
 
-      <span class="section-h">
-        <i class="fa fa-eye" aria-hidden="true"></i>
-        <h2>Appearence</h2>
-      </span>
+      <FormGroupTitle icon="eye" title="Appearance" />
 
-      <div class="ag-label bg">
-        Background color
-        <input class="ag-color" type="color" id="bg_color" tabindex="0" />
-        <label class="ag-toggle" title="Change Background Color">
-          <input type="checkbox" id="color" />
+      <div class="switchLabel">
+        <span class="mr-auto">Background color</span>
+        <input class="w-12 h-8 mr-4" type="color" />
+        <label class="switchToggle">
+          <input type="checkbox" checked={true} id="bg-color" name="Background Color" />
           <span class="slider"></span>
         </label>
       </div>
-
-      <div class="ag-save" id="saved_text" tabindex="0"></div>
     </form>
   );
 };
 
 export { SettingsForm };
+
+const FormGroupTitle: Component<{ icon: string; title: string }> = ({ icon, title }) => {
+  return (
+    <>
+      <span class="flex items-center text-xl mt-2">
+        <i class={`fa fa-${icon} mr-2`} aria-hidden="true"></i>
+        <h2>{title}</h2>
+      </span>
+      <hr class="mb-4" />
+    </>
+  );
+};
