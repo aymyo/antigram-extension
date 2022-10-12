@@ -8,31 +8,31 @@ const [resourceSettings] = createResource<Settings>(async () =>
 const [settings, setSettings] = createSignal<Settings>(defaultSettings);
 
 createEffect(() => {
-  if (resourceSettings.loading && resourceSettings() !== undefined) {
+  if (resourceSettings() !== undefined && !resourceSettings.loading) {
     setSettings(resourceSettings()!);
   }
 });
 
 createEffect(() => {
-  if (import.meta.env.PROD) {
+  if (import.meta.env.PROD && !resourceSettings.loading) {
     storeSettings(settings());
   }
 });
 
 export function useSettings() {
   return {
-    settings: settings(),
+    settings: settings,
     toggleHideExplore: () => {
-      setSettings({ ...settings(), hideExplore: settings().hideExplore });
+      setSettings({ ...settings(), hideExplore: !settings().hideExplore });
     },
     toggleHideSuggestions: () => {
-      setSettings({ ...settings(), hideSuggestions: settings().hideSuggestions });
+      setSettings({ ...settings(), hideSuggestions: !settings().hideSuggestions });
     },
     toggleHideStories: () => {
-      setSettings({ ...settings(), hideStories: settings().hideStories });
+      setSettings({ ...settings(), hideStories: !settings().hideStories });
     },
     toggleHideFeed: () => {
-      setSettings({ ...settings(), hideFeed: settings().hideFeed });
+      setSettings({ ...settings(), hideFeed: !settings().hideFeed });
     },
     setBgColor: (bgColor: string | undefined) => {
       setSettings({ ...settings(), bgColor: bgColor });

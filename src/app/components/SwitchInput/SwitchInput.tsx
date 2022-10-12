@@ -9,12 +9,18 @@ interface SwitchInputProps {
 
 import "./SwitchInput.css";
 
-const SwitchInput: Component<SwitchInputProps> = ({ id, label, checked, onChange }) => {
+const SwitchInput: Component<SwitchInputProps> = (props) => {
   return (
-    <label class="switchLabel" for={id}>
-      {label}
+    <label class="switchLabel" for={props.id}>
+      {props.label}
       <span class="switchToggle">
-        <input type="checkbox" checked={checked} id={id} name={label} onchange={onChange} />
+        <input
+          type="checkbox"
+          checked={props.checked}
+          id={props.id}
+          name={props.label}
+          onchange={props.onChange}
+        />
         <span class="slider"></span>
       </span>
     </label>

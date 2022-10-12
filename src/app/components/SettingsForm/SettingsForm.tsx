@@ -1,4 +1,4 @@
-import { Component, createEffect, createResource, createSignal, For } from "solid-js";
+import { Component, createSignal } from "solid-js";
 import { useSettings } from "../../data/settings";
 import { SwitchInput } from "../SwitchInput";
 
@@ -11,19 +11,7 @@ const SettingsForm: Component = () => {
     toggleHideSuggestions,
     setBgColor
   } = useSettings();
-
   const [localBgColor, setLocalBgColor] = createSignal<string>();
-
-  const inputs = [
-    { label: "Hide Explore", checked: settings.hideExplore, onChange: toggleHideExplore },
-    {
-      label: "Hide Suggestions",
-      checked: settings.hideSuggestions,
-      onChange: toggleHideSuggestions
-    },
-    { label: "Hide Stories", checked: settings.hideStories, onChange: toggleHideStories },
-    { label: "Hide Feed", checked: settings.hideFeed, onChange: toggleHideFeed }
-  ];
 
   return (
     <form title="SettingsForm">
@@ -33,9 +21,30 @@ const SettingsForm: Component = () => {
 
       <FormGroupTitle icon="ban" title="Block sections" />
 
-      <For each={inputs}>
-        {(input) => <SwitchInput id={input.label.replace(" ", "")} {...input} />}
-      </For>
+      <SwitchInput
+        id="HideExplore"
+        label="Hide Explore"
+        checked={settings().hideExplore}
+        onChange={toggleHideExplore}
+      />
+      <SwitchInput
+        id="HideSuggestions"
+        label="Hide Suggestions"
+        checked={settings().hideSuggestions}
+        onChange={toggleHideSuggestions}
+      />
+      <SwitchInput
+        id="Hide Stories"
+        label="Hide Stories"
+        checked={settings().hideStories}
+        onChange={toggleHideStories}
+      />
+      <SwitchInput
+        id="Hide Feed"
+        label="Hide Feed"
+        checked={settings().hideFeed}
+        onChange={toggleHideFeed}
+      />
 
       <FormGroupTitle icon="eye" title="Appearance" />
 
@@ -44,10 +53,10 @@ const SettingsForm: Component = () => {
         <input
           class="w-12 h-8 mr-4"
           type="color"
-          value={localBgColor() ?? settings.bgColor}
+          value={localBgColor() ?? settings().bgColor}
           onChange={(event) => {
             setLocalBgColor(event.currentTarget.value);
-            if (settings.bgColor !== null) {
+            if (settings().bgColor !== null) {
               setBgColor(event.currentTarget.value);
             }
           }}
@@ -55,7 +64,7 @@ const SettingsForm: Component = () => {
         <label class="switchToggle">
           <input
             type="checkbox"
-            checked={settings.bgColor !== undefined}
+            checked={settings().bgColor !== undefined}
             id="bg-color"
             name="Background Color"
             onChange={(event) => {
