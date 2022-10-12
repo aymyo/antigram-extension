@@ -1,17 +1,11 @@
 import { Component, createSignal } from "solid-js";
-import { getSettings, Settings } from "../util/storage";
 import { SettingsForm } from "./components/SettingsForm";
 import { Routes, Route, Link } from "@solidjs/router";
 
 import "./styles/app.css";
 import { AboutPage } from "./components/AboutPage";
 
-async function a() {
-  console.log(await getSettings());
-}
-
 const App: Component = () => {
-  a();
   return (
     <div class="container">
       <header class="header">
