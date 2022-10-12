@@ -34,7 +34,7 @@ async function build() {
   });
   await fs.copy("src/manifest.json", "build/manifest.json");
   await fs.copy("LICENSE", "build/LICENSE");
-  await fs.copy("src/app/images", "build/app/images");
+  await fs.copy("src/app/images", "build/images");
 }
 
 build();

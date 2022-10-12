@@ -9,6 +9,7 @@
     "typeRoots": ["node_modules/@types"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vite/client", "@types/chrome"]
   }
 }

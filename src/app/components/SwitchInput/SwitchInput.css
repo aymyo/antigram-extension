@@ -1,0 +1,80 @@
+.switchLabel {
+  font-size: large;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #a8a8a8;
+}
+
+.switchLabel:focus {
+  outline: 1px solid #fff;
+  color: #ad3d3d;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switchLabel:active,
+.switchLabel:hover {
+  outline: none;
+  color: #ad3d3d;
+  cursor: pointer;
+}
+
+/* ----------------------- Toggle Button ------------- */
+.switchToggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switchToggle input {
+  opacity: 0;
+  width: 1;
+  height: 1;
+}
+
+/* The slider */
+.switchToggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 22px;
+  bottom: 0;
+  background-color: rgb(75, 75, 75);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switchToggle .slider:before {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  border-radius: 50%;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switchToggle input:checked + .slider {
+  background-color: #ad3d3d;
+}
+
+.switchToggle input:focus + .slider {
+  box-shadow: 0px 0px 1px 2px #fff;
+}
+
+.switchToggle input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
