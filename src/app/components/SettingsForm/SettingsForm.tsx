@@ -15,10 +15,6 @@ const SettingsForm: Component = () => {
 
   return (
     <form title="SettingsForm">
-      <div class="mb-8">
-        Toggle to hide or show Instagram's functionalities, they will be updated instantly.
-      </div>
-
       <FormGroupTitle icon="ban" title="Block sections" />
 
       <SwitchInput

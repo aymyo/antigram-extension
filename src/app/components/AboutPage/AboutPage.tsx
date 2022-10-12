@@ -54,11 +54,11 @@ const AboutPage: Component = () => {
       <div class="text-sm mt-8 text-center">
         Made by
         <ExternalLink label="aymyo" href="https://github.com/aymyo" className="mx-1" />
-        ,
+        and
         <ExternalLink label="marcsaga" href="https://github.com/marcsaga" className="mx-1" />
-        and from Barcelona.
+        from Barcelona.
         <br />
-        Thanks also to the rest of
+        Thanks
         <ExternalLink
           label="contributors"
           href="https://github.com/aymyo/antigram-extension/graphs/contributors"
