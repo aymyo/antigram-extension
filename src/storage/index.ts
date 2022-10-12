@@ -10,8 +10,7 @@ export const defaultSettings: Settings = {
   hideExplore: true,
   hideSuggestions: true,
   hideStories: false,
-  hideFeed: false,
-  bgColor: "#fafafa"
+  hideFeed: false
 };
 
 export const storeSettings = (settings: Settings): Promise<void> => {

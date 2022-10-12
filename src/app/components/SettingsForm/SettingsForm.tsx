@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js";
+import { Component, createEffect, createSignal } from "solid-js";
 import { useSettings } from "../../data/settings";
 import { SwitchInput } from "../SwitchInput";
 
@@ -12,6 +12,11 @@ const SettingsForm: Component = () => {
     setBgColor
   } = useSettings();
   const [localBgColor, setLocalBgColor] = createSignal<string>();
+  createEffect(() => {
+    if (settings().bgColor !== undefined) {
+      setLocalBgColor(settings().bgColor);
+    }
+  });
 
   return (
     <form title="SettingsForm">
@@ -49,10 +54,10 @@ const SettingsForm: Component = () => {
         <input
           class="w-12 h-8 mr-4"
           type="color"
-          value={localBgColor() ?? settings().bgColor}
+          value={localBgColor() ?? settings().bgColor ?? "#fafafa"}
           onChange={(event) => {
             setLocalBgColor(event.currentTarget.value);
-            if (settings().bgColor !== null) {
+            if (settings().bgColor !== undefined) {
               setBgColor(event.currentTarget.value);
             }
           }}
