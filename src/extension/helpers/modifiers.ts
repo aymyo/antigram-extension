@@ -7,12 +7,10 @@ export const hideElement = (element: HTMLElement | null, value: boolean | string
 //Changes Background Color if the setting is activated / restores the original if not
 export const changeColor = (
   element: HTMLElement | null,
-  color: string | boolean,
-  default_color: string,
-  value: boolean | string
+  color: string | undefined,
+  defaultColor: string
 ) => {
-  console.log(element, color, value);
   if (element !== null) {
-    element.style.background = value ? String(color) : default_color;
+    element.style.background = color ?? defaultColor;
   }
 };

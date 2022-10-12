@@ -1,10 +1,18 @@
-import { Component, createResource, createSignal, For } from "solid-js";
+import { Component, createEffect, createResource, createSignal, For } from "solid-js";
 import { useSettings } from "../../data/settings";
 import { SwitchInput } from "../SwitchInput";
 
 const SettingsForm: Component = () => {
-  const { settings, toggleHideExplore, toggleHideStories, toggleHideFeed, toggleHideSuggestions } =
-    useSettings();
+  const {
+    settings,
+    toggleHideExplore,
+    toggleHideStories,
+    toggleHideFeed,
+    toggleHideSuggestions,
+    setBgColor
+  } = useSettings();
+
+  const [localBgColor, setLocalBgColor] = createSignal<string>();
 
   const inputs = [
     { label: "Hide Explore", checked: settings.hideExplore, onChange: toggleHideExplore },
@@ -33,9 +41,27 @@ const SettingsForm: Component = () => {
 
       <div class="switchLabel">
         <span class="mr-auto">Background color</span>
-        <input class="w-12 h-8 mr-4" type="color" />
+        <input
+          class="w-12 h-8 mr-4"
+          type="color"
+          value={localBgColor() ?? settings.bgColor}
+          onChange={(event) => {
+            setLocalBgColor(event.currentTarget.value);
+            if (settings.bgColor !== null) {
+              setBgColor(event.currentTarget.value);
+            }
+          }}
+        />
         <label class="switchToggle">
-          <input type="checkbox" checked={true} id="bg-color" name="Background Color" />
+          <input
+            type="checkbox"
+            checked={settings.bgColor !== undefined}
+            id="bg-color"
+            name="Background Color"
+            onChange={(event) => {
+              setBgColor(event.currentTarget.checked ? localBgColor() : undefined);
+            }}
+          />
           <span class="slider"></span>
         </label>
       </div>
