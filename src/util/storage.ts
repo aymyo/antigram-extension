@@ -5,6 +5,7 @@ export interface Settings {
   hideFeed: boolean;
   bgColor: string | null;
 }
+
 export const defaultSettings: Settings = {
   hideExplore: true,
   hideSuggestions: true,
@@ -12,8 +13,9 @@ export const defaultSettings: Settings = {
   hideFeed: false,
   bgColor: "#fafafa"
 };
-export const setSettings = (options: Settings) => chrome.storage.session.set({ options });
-export const getSettings = async () => {
+
+export const storeSettings = (options: Settings) => chrome.storage.session.set({ options });
+export const getStoredSettings = async () => {
   const settings = await chrome.storage.session.get(["options"]);
   return settings as Settings;
 };
