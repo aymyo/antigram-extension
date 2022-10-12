@@ -5,17 +5,17 @@
   "page_action": {
     "default_title": "Antigram Web",
     "default_icon": {
-      "16": "app/images/ag16.png",
-      "32": "app/images/ag32.png",
-      "48": "app/images/ag48.png",
-      "128": "app/images/ag128.png"
+      "16": "images/ag16.png",
+      "32": "images/ag32.png",
+      "48": "images/ag48.png",
+      "128": "images/ag128.png"
     }
   },
   "icons": {
-    "16": "app/images/ag16.png",
-    "32": "app/images/ag32.png",
-    "48": "app/images/ag48.png",
-    "128": "app/images/ag128.png"
+    "16": "images/ag16.png",
+    "32": "images/ag32.png",
+    "48": "images/ag48.png",
+    "128": "images/ag128.png"
   },
   "permissions": ["storage"],
   "content_scripts": [
