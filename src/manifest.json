@@ -33,7 +33,7 @@
     {
       "js": ["content.js"],
       "matches": ["*://www.instagram.com/*"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
 
