@@ -54,6 +54,17 @@ async function ApplyAntigram() {
       console.error("Antigram Selector Error 4 -" + error);
     }
 
+    //Reels section
+    else if (path.slice(0, 8) == "/reels") {
+    try {
+      mainSectionElement = document.body.querySelector('main');
+      //navbarElement = document.body.querySelector("nav > div:last-child > div"); //div.Hz2lF
+      hideElement(mainSectionElement, settings.hideExplore);
+      //changeColor(navbarElement, settings.bgColor, "#fafafa");
+    } catch (error) {
+      console.error("Antigram Selector Error 6 -" + error);
+    }
+  
     //Home Section
   } else if (path == "/") {
     try {
