@@ -22,11 +22,14 @@ async function ApplyAntigram() {
   } //Direct Messages Section
   else if (path.slice(0, 8) == "/direct/") {
     try {
-      mainSectionElement = document.body.querySelector("section > div > div:last-child > div");
-      navbarElement = document.body.querySelector("section > div > div:first-child"); //div.Hz2lF
-      const exploreLinkInDirectPage: HTMLElement | null = document.querySelector(
-        'section a[href*="/explore/"]'
+      mainSectionElement = document.body.querySelector(
+        "section > div > div:last-child > div"
       );
+      navbarElement = document.body.querySelector(
+        "section > div > div:first-child"
+      ); //div.Hz2lF
+      const exploreLinkInDirectPage: HTMLElement | null =
+        document.querySelector('section a[href*="/explore/"]');
       hideElement(exploreLinkInDirectPage, settings.hideExplore);
       changeColor(navbarElement, settings.bgColor, "#fafafa");
       changeColor(mainSectionElement, settings.bgColor, "#fff");
@@ -44,7 +47,10 @@ async function ApplyAntigram() {
     }
 
     //Explore and Directory Sections
-  } else if (path.slice(0, 9) == "/explore/" || path.slice(0, 11) == "/directory/") {
+  } else if (
+    path.slice(0, 9) == "/explore/" ||
+    path.slice(0, 11) == "/directory/"
+  ) {
     try {
       mainSectionElement = document.body.querySelector("[role=main]");
       navbarElement = document.body.querySelector("nav > div:last-child > div"); //div.Hz2lF
@@ -53,18 +59,19 @@ async function ApplyAntigram() {
     } catch (error) {
       console.error("Antigram Selector Error 4 -" + error);
     }
+  }
 
-    //Reels section
-    else if (path.slice(0, 8) == "/reels") {
+  //Reels section
+  else if (path.slice(0, 8) == "/reels") {
     try {
-      mainSectionElement = document.body.querySelector('main');
+      mainSectionElement = document.body.querySelector("main");
       //navbarElement = document.body.querySelector("nav > div:last-child > div"); //div.Hz2lF
       hideElement(mainSectionElement, settings.hideExplore);
       //changeColor(navbarElement, settings.bgColor, "#fafafa");
     } catch (error) {
       console.error("Antigram Selector Error 6 -" + error);
     }
-  
+
     //Home Section
   } else if (path == "/") {
     try {
