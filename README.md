@@ -29,17 +29,20 @@ Download it from
 [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh "Chrome Store")
 or install it manually:
 
-```
-> Extract the content from the ZIP folder
-> Open Chrome
-> Go to "Customize"
-> Go to "More tools"
-> Click "Extensions"
-> Toggle "Developer Mode"
-> Click on "Load unpacked"
-> Select this folder
-> Done!
-```
+### Manually Build:
+1. clone the repo, `git clone https://github.com/aymyo/antigram-extension.git`
+2. change directories into the repo `cd antigram-extension`
+3. install the npm packages with `npm install`
+4. run the build with `npm run build`
+5. open chrome
+6. go to customize
+7. go to more tools
+8. click on extensions
+9. toggle "Developer Mode"
+10. Click on "Load unpacked"
+11. Select the build folder located in the antigram-extension folder
+12. Done!
+
 
 ### Warning
 
