@@ -14,6 +14,7 @@ async function getFiles() {
 }
 
 async function build() {
+  await fs.mkdirp("build");
   await fs.rm("build", { recursive: true });
   await vite.build({
     plugins: [solidPlugin()],
