@@ -25,3 +25,10 @@ export const feedBox = (): HTMLElement | null =>
 
 export const feedLoader = (): HTMLElement | null =>
   document.querySelector("[data-visualcompletion='loading-state']");
+
+export const sponsoredPosts = (): HTMLElement[] => {
+  return Array.from(document.querySelectorAll<HTMLElement>("article[role='presentation']")).filter(article =>
+    Array.from(article.querySelectorAll("span")).some(span => span.textContent === "Sponsored")
+  );
+};
+

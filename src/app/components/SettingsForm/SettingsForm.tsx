@@ -9,7 +9,8 @@ const SettingsForm: Component = () => {
     toggleHideStories,
     toggleHideFeed,
     toggleHideSuggestions,
-    setBgColor
+    setBgColor,
+    toggleHideSponsoredPosts,
   } = useSettings();
   const [localBgColor, setLocalBgColor] = createSignal<string>();
   createEffect(() => {
@@ -45,6 +46,12 @@ const SettingsForm: Component = () => {
         label="Hide Feed"
         checked={settings().hideFeed}
         onChange={toggleHideFeed}
+      />
+      <SwitchInput
+        id="Hide Sponsored Posts"
+        label="Hide Sponsored Posts"
+        checked={settings().hideSponsoredPosts}
+        onChange={toggleHideSponsoredPosts}
       />
 
       <FormGroupTitle icon="eye" title="Appearance" />
