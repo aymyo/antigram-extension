@@ -15,7 +15,6 @@ let feedBackgroundElement: HTMLElement | null;
 async function ApplyAntigram() {
   const settings = await getStoredSettings();
   const path = window.location.pathname;
-  console.log("Antigram is running on " + path);
 
   //Where Antigram is not needed
   if (path.slice(0, 7) == "/about/" || path.slice(0, 11) == "/developer/") {
@@ -69,7 +68,7 @@ async function ApplyAntigram() {
       hideElement(select.feedBox(), settings.hideFeed);
       hideElement(select.feedLoader(), settings.hideFeed);
 
-      hidePosts(select.sponsoredPosts(), settings.hideSponsoredPosts);
+      // hidePosts(select.sponsoredPosts(), settings.hideSponsoredPosts);
 
       changeColor(mainSectionElement, settings.bgColor, "#fff");
       changeColor(navbarElement, settings.bgColor, "#fafafa");

@@ -4,6 +4,23 @@ export const hideElement = (element: HTMLElement | null, value: boolean | string
   }
 };
 
+
+// collapses the post so it doesn't take up any feed space. 
+export const collapsePost = (element: HTMLElement | null, value: boolean | string) => {
+  if (element !== null) {
+    const firstChild = element.firstChild as HTMLElement
+    firstChild.style.display = value ? "none" : "block";
+  }
+};
+
+// leaves a blank spot on the feed, the post still takes up space but is just not visible
+export const hidePost = (element: HTMLElement | null, value: boolean | string) => {
+  if (element !== null) {
+    element.style.visibility = value ? "hidden" : "";
+  }
+}
+
+
 export const hidePosts = (elements: HTMLElement[] | null, value: boolean | string) => {
   elements?.forEach(element => {
     /* setting display: none makes the feed glitch after scrolling ~4 posts */
