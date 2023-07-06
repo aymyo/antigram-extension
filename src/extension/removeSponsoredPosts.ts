@@ -5,36 +5,15 @@ import * as select from "./helpers/selectors";
 // this is all blatantly stolen/informed by the wonderful work at this stackoverflow answer:
 // https://stackoverflow.com/questions/32533580/deleting-dom-elements-before-the-page-is-displayed-to-the-screen-in-a-chrome-ex/32537455#32537455
 
-
-
-
-function onVisible(element: HTMLElement, callback: any) {
-  // this function taken from: https://stackoverflow.com/questions/1462138/event-listener-for-when-element-becomes-visible
-  new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0) {
-        callback(element);
-        observer.disconnect();
-      }
-    });
-  }).observe(element);
-}
-
-let count = 0;
-
 async function ApplyAntigram() {
   let suggestedPostsVisible = false;
   let allCaughtUpIndex = -1;
 
   // in case the content script was injected after the page is partially loaded
-
   const path = window.location.pathname;
   const settings = await getStoredSettings();
-  console.log("path: ", path);
-  console.log("url is: ", window.location.href)
 
   if (path === "/") {
-    console.log("on home page")
     const mutationObserver = new MutationObserver(onMutation); // will invoke onMutation whenever the DOM changes
 
     // this onMutation function essentially just contains a stream of DOM elements that are 
@@ -103,7 +82,6 @@ async function ApplyAntigram() {
     onMutation([{ addedNodes: [document.documentElement] }] as unknown as MutationRecord[]);
   }
 
-  // else just remove sidebar features:
 
 }
 
