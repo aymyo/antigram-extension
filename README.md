@@ -1,4 +1,4 @@
-# ![alt text][logo] Antigram Chrome Extension
+# ![alt text][logo] Antigram - Reels and Explore blocker
 
 Antigram is a chrome extension that gives the user tools to fight back Instagram's addictive
 features. It was made on my free time with the objective of being able to check what were my friends
