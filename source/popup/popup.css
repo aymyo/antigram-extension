@@ -1,0 +1,101 @@
+/* root color variables */
+:root {
+  --red: oklch(51.84% 0.147 23.77);
+  --black: oklch(20% 0.008 308.04);
+  --gray: oklch(24% 0.008 308.04);
+  --white: oklch(100% 0 264.51);
+}
+
+@font-face {
+  font-family: "Sansita Swashed";
+  src: url("./SansitaSwashed-Light.woff2") format("woff2");
+}
+
+html {
+  background-color: var(--black);
+  font-size: 14px;
+  text-underline-offset: 0.2rem;
+}
+
+a {
+  color: var(--white);
+}
+
+.antigram {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: var(--gray);
+  color: var(--white);
+  min-width: 40ch;
+  width: 40ch;
+  max-height: 600px;
+  display: flex;
+  margin: 0 auto;
+  border: var(--black);
+  justify-content: start;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.text-antigram {
+  font-family: "Sansita Swashed", sans-serif !important;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+}
+label:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--black);
+}
+input[type="checkbox"] {
+  accent-color: var(--red);
+  transform: scale(1.1);
+  margin-right: 0.5rem;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+[data-tab-content].active {
+  display: block;
+}
+
+[data-tab-target] {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.1rem 1rem;
+  margin: 0;
+  border-radius: 0.2rem;
+  border: var(--white) 1px solid;
+}
+
+[data-tab-target].active,
+[data-tab-target]:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+button.btn {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 0.25rem 1rem 0.3rem;
+  margin: 0;
+  border-radius: 0.2rem;
+}
+
+button.btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
