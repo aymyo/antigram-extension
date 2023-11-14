@@ -4,7 +4,7 @@ Antigram is a chrome extension that gives the user tools to fight back Instagram
 features. It was made on my free time with the objective of being able to check what were my friends
 up to without falling into a blackhole of meaningless content.
 
-### ✨ Current features
+### ✨  Current features
 
 - Block 'Reels' page
 - Block 'Explore' page
@@ -15,10 +15,10 @@ up to without falling into a blackhole of meaningless content.
   
 Missing something? Leave me a [suggestion](https://github.com/aymyo/antigram-extension/issues)! ☀️
 
-### 📀 Stack
+### 📀  Stack
 To avoid a build process and make development easier, I've sticked to browser native functionalities and JS, HTML and CSS.
 
-### ⏬ Set it up in your browser
+### ⏬  Set it up in your browser
 
 Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh "Chrome Store") or install it mmanually follwing the next steps:
 
@@ -30,10 +30,10 @@ Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/an
 6. Select the 'source' folder in the `antigram-extension` project
 7. Done!
 
-#### ⚠️ Disclaimer
+#### ⚠️  Disclaimer
 Instragam updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️
 
-### 🤝 Contributing
+### 🤝  Contributing
 If you want to contribute please feel free to do so by opening a PR. I will review it at some point (although I can't promise that happens soon!).
 
 To start developing, do steps 1-7 and:
@@ -41,12 +41,15 @@ To start developing, do steps 1-7 and:
 11. Install the development packages with `yarn install`
 12. Any change you make to the source folder will be automatically reflected if you refresh the extension.
 
-[logo]: https://github.com/aymyo/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
 
-##### Sources and recommendations
+##### ℹ️  Sources and recommendations
 
 This extension is mostly inspired by Jord West's
 [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you
 are a Facebook user. Additionally, I also recommend
 [DF Youtube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna)
 to have a better experience using Youtube.
+
+
+[logo]: https://github.com/aymyo/antigram-extension/blob/main/images/ag32.png "Antigram Logo"
+
