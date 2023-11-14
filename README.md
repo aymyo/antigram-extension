@@ -51,5 +51,5 @@ are a Facebook user. Additionally, I also recommend
 to have a better experience using Youtube.
 
 
-[logo]: https://github.com/aymyo/antigram-extension/blob/main/source/public/ag32.png "Antigram Logo"
+[logo]: https://github.com/aymyo/antigram-extension/blob/main/source/public/ag16.png "Antigram Logo"
 
