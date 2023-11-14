@@ -30,7 +30,7 @@ Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/an
 6. Select the 'source' folder in the `antigram-extension` project
 7. Done!
 
-#### ⚠️  Disclaimer
+#### Disclaimer
 Instragam updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️
 
 ### 🤝  Contributing
