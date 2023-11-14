@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Antigram Options</title>
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body class="antigram">
+    <div class="d-flex align-items-center py-3 px-4 gap-2 border-bottom">
+      <img width="26" height="26" src="../public/ag48.png" />
+      <h1 class="text-antigram m-0 fs-3 mb-1">Antigram</h1>
+      <nav class="d-flex gap-3 mb-0 p-0 mt-0 ms-auto">
+        <a data-tab-target="#options" class="active" href="#">Options</a>
+        <a data-tab-target="#about" href="#">About</a>
+      </nav>
+    </div>
+
+    <main class="py-3 px-4">
+      <section data-tab-content id="options" class="active">
+        <div class="ml-2">
+          <h2>Hide</h2>
+          <form class="fw-light">
+            <p class="fw-light">Block the sections you don't want to see.</p>
+            <label><input type="checkbox" id="blockReels" /> Hide 'Reels' page </label>
+            <label><input type="checkbox" id="blockExplore" /> Hide 'Explore' page </label>
+            <label><input type="checkbox" id="blockStories" /> Hide 'Stories' section </label>
+            <label><input type="checkbox" id="blockPosts" /> Hide 'Posts' section </label>
+            <label>
+              <input type="checkbox" id="blockSuggestedFollowers" />
+              Hide 'Suggested followers' section
+            </label>
+
+            <h2 class="pt-3">Redirect</h2>
+            <p>If enabled, will always show the 'Following' feed, avoiding suggested content.</p>
+            <label>
+              <input type="checkbox" id="blockForYouFeed" /> Redirect "For you" feed to "Following"
+            </label>
+          </form>
+          <div class="d-flex gap-3 align-items-center pb-2 pt-3">
+            <button id="save" class="btn">Save changes</button>
+            <small id="status"></small>
+          </div>
+        </div>
+      </section>
+
+      <section data-tab-content id="about">
+        <h2>Antigram</h2>
+        <p class="fw-light">
+          This extension tries to give the power back to the users to use social media for what it
+          was created for: see and follow who you want without falling into and endless black hole
+          of meaningless content.
+        </p>
+        <h2>Support us</h2>
+        <p class="fw-light">
+          <i>Antigram</i> was created and is mainly maintained by one developer,
+          <a href="https://github.com/aymyo" target="_blank" rel="noopener noreferrer">aymyo</a>
+          (me!). Thankfully, I also had contributions from
+          <a
+            href="https://github.com/aymyo/antigram-extension/graphs/contributors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            other developers
+          </a>
+          ❤️
+          <br />
+          If you find this extension useful, please consider helping by:
+        </p>
+        <ul class="fw-light">
+          <li>Sharing it it!</li>
+          <li>
+            Leaving a review on
+            <a
+              href="https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chrome Store
+            </a>
+          </li>
+          <li>
+            Reporting or making suggestions
+            <a
+              href="ttps://github.com/aymyo/antigram-extension/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              on Github
+            </a>
+          </li>
+        </ul>
+        <h2>Privacy and conditions</h2>
+        <p class="fw-light mb-0">
+          <i>Antigram</i> will never track you. It’s free. It only needs ‘storage’ permissions to
+          save your options.
+        </p>
+      </section>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
