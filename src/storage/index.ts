@@ -3,14 +3,19 @@ export interface Settings {
   hideSuggestions: boolean;
   hideStories: boolean;
   hideFeed: boolean;
+  hideSponsoredPosts: boolean;
   bgColor?: string;
+  hidePostsFromUnfollowedAccounts: boolean;
 }
 
 export const defaultSettings: Settings = {
   hideExplore: true,
   hideSuggestions: true,
   hideStories: false,
-  hideFeed: false
+  hideFeed: false,
+  hideSponsoredPosts: true,
+  hidePostsFromUnfollowedAccounts: true,
+  bgColor: "#0000",
 };
 
 export const storeSettings = (settings: Settings): Promise<void> => {

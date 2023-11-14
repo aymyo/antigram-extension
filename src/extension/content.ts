@@ -1,5 +1,5 @@
 import { getStoredSettings } from "../storage";
-import { hideElement, changeColor } from "./helpers/modifiers";
+import { hideElement, hidePosts, changeColor } from "./helpers/modifiers";
 import * as select from "./helpers/selectors";
 
 const DEBUG_ON = false;
@@ -67,6 +67,9 @@ async function ApplyAntigram() {
       hideElement(select.storiesArrow(), settings.hideStories);
       hideElement(select.feedBox(), settings.hideFeed);
       hideElement(select.feedLoader(), settings.hideFeed);
+
+      // hidePosts(select.sponsoredPosts(), settings.hideSponsoredPosts);
+
       changeColor(mainSectionElement, settings.bgColor, "#fff");
       changeColor(navbarElement, settings.bgColor, "#fafafa");
       changeColor(feedBackgroundElement, settings.bgColor, "#fff");
@@ -103,3 +106,4 @@ window.addEventListener('load', () => {
     clearInterval(applyCallInterval);
 });
 */
+

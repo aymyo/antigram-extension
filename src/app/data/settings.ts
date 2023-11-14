@@ -34,6 +34,9 @@ export function useSettings() {
     toggleHideFeed: () => {
       setSettings({ ...settings(), hideFeed: !settings().hideFeed });
     },
+    toggleHideSponsoredPosts: () => {
+      setSettings({ ...settings(), hideSponsoredPosts: !settings().hideSponsoredPosts });
+    },
     setBgColor: (bgColor: string | undefined) => {
       setSettings({ ...settings(), bgColor: bgColor });
     }

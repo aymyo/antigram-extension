@@ -1,2 +1,5 @@
 node_modules
 build
+.vscode/settings.json
+package-lock.json
+.vscode
