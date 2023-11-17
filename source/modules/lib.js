@@ -1,7 +1,7 @@
 export const defaultOptions = {
   blockReels: true,
   blockExplore: true,
-  blockStories: true,
+  blockStories: false,
   blockPosts: false,
   blockSuggestedFollowers: true,
   blockForYouFeed: true

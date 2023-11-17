@@ -1,9 +1,15 @@
 import { labelsArray, defaultOptions, selectors, urls } from "../modules/lib.js";
 
 async function main() {
-  const storedSettings = await new Promise((resolve) => {
+  const loadedSettings = await new Promise((resolve) => {
     chrome.storage.sync.get(labelsArray, resolve);
   });
+
+  if (Object.keys(loadedSettings).length === 0) {
+    chrome.storage.sync.set(defaultOptions);
+  }
+
+  const settings = Object.keys(loadedSettings).length > 0 ? loadedSettings : defaultOptions;
 
   const mutationObserver = new MutationObserver(onMutation);
 
@@ -61,8 +67,6 @@ async function main() {
       storiesSection?.remove();
     }
   }
-
-  const settings = storedSettings || defaultOptions;
 
   // Start observing the DOM for changes
   mutationObserver.observe(document, {
