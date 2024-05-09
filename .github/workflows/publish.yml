@@ -1,0 +1,39 @@
+name: Publish
+
+on:
+  workflow_dispatch: 
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Google Chrome
+        run: |
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+      - name: Build CRX
+        run: |
+            google-chrome-stable --pack-extension="./source"
+            mv ./source.crx ./antigram.crx
+
+      - name: Build Zip
+        run: |
+            mkdir antigram
+            cp -r ./source/* ./antigram
+            zip -r antigram.zip ./antigram
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+            files: |
+                ./antigram.crx
+                ./antigram.zip
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
