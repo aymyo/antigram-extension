@@ -2,7 +2,7 @@
   "name": "Antigram - Explore & Reels Blocker",
   "description": "Browser extension to fight back Instagram's addictive features.",
   "author": "aymyo",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "manifest_version": 3,
 
   "permissions": ["storage"],
