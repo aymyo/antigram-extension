@@ -60,6 +60,12 @@ async function main() {
       }
     }
 
+    const blockStoriesSection = path.includes(urls.stories) && settings.blockStories;
+    if (blockStoriesSection) {
+      const storiesSection = body?.querySelector("section");
+      hide(storiesSection);
+    }
+
     const blockReelsScreen = path.includes(urls.reels) && settings.blockReels;
     if (blockReelsScreen) {
       const main = body?.querySelector(selectors.main);
@@ -69,13 +75,7 @@ async function main() {
     const blockExploreScreen = path.includes(urls.explore) && settings.blockExplore;
     if (blockExploreScreen) {
       const main = body?.querySelector(selectors.main);
-      main?.remove();
-    }
-
-    const blockStoriesScreen = path.includes(urls.stories) && settings.blockStories;
-    if (blockStoriesScreen) {
-      const storiesSection = body?.querySelector("section");
-      storiesSection?.remove();
+      hide(main);
     }
   }
 
