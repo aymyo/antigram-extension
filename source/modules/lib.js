@@ -19,7 +19,7 @@ export const selectors = {
     direct: "a[href*='/direct/inbox/']",
     activity: "a[href*='/accounts/activity']",
     explore: "a[href='/explore/']",
-    reels: "a[href*='/reels/']"
+    reels: "a[href='/reels/']"
   }
 };
 
@@ -28,4 +28,10 @@ export const urls = {
   stories: "/stories",
   reels: "/reels",
   explore: "/explore"
+};
+
+export const hide = (element) => {
+  if (element) {
+    element.style.display = "none";
+  }
 };

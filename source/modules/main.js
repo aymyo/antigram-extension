@@ -1,4 +1,4 @@
-import { labelsArray, defaultOptions, selectors, urls } from "../modules/lib.js";
+import { labelsArray, defaultOptions, selectors, urls, hide } from "../modules/lib.js";
 
 async function main() {
   const loadedSettings = await new Promise((resolve) => {
@@ -17,30 +17,38 @@ async function main() {
     const path = window.location.pathname;
     const body = document.body;
 
-    // Remove navigation links
-    const exploreLink = body?.querySelector(selectors.nav.explore);
-    const reelsLink = body?.querySelector(selectors.nav.reels);
-    settings.blockExplore && exploreLink?.remove();
-    settings.blockReels && reelsLink?.remove();
+    if (settings.blockExplore) {
+      const exploreLink = body?.querySelector(selectors.nav.explore);
+      hide(exploreLink);
+    }
+    if (settings.blockReels) {
+      const reelsLink = body?.querySelector(selectors.nav.reels);
+      hide(reelsLink);
+    }
 
     if (path === urls.base) {
-      // Remove stories
-      const storyFeed = body?.querySelector(selectors.storyFeed);
-      settings.blockStories && storyFeed?.remove();
+      if (settings.blockStories) {
+        const storyFeed = body?.querySelector(selectors.storyFeed);
+        hide(storyFeed);
+      }
 
-      // Remove posts
-      const posts = body?.querySelector(selectors.posts);
-      const postsLoader = body?.querySelector(selectors.postsLoader);
-      const postsContainer = posts?.closest("div");
-      settings.blockPosts && postsContainer?.remove();
-      settings.blockPosts && postsLoader?.remove();
+      if (settings.blockPosts) {
+        const posts = body?.querySelector(selectors.posts);
+        const postsLoader = body?.querySelector(selectors.postsLoader);
+        const postsContainer = posts?.closest("div");
+        hide(posts);
+        hide(postsLoader);
+        hide(postsContainer);
+      }
 
-      // Remove suggested followers
-      const suggestedFollowersLink = body?.querySelector(selectors.suggestedFollowers);
-      const suggestedFollowersTitle = suggestedFollowersLink?.closest("div");
-      const suggestedFollowers = suggestedFollowersTitle?.nextElementSibling;
-      settings.blockSuggestedFollowers && suggestedFollowers?.remove();
-      settings.blockSuggestedFollowers && suggestedFollowersTitle?.remove();
+      if (settings.blockSuggestedFollowers) {
+        const suggestedFollowersLink = body?.querySelector(selectors.suggestedFollowers);
+        const suggestedFollowersTitle = suggestedFollowersLink?.closest("div");
+        const suggestedFollowers = suggestedFollowersTitle?.nextElementSibling;
+        hide(suggestedFollowersLink);
+        hide(suggestedFollowersTitle);
+        hide(suggestedFollowers);
+      }
 
       // Redirect to 'Following' feed
       if (settings.blockForYouFeed) {
@@ -52,17 +60,20 @@ async function main() {
       }
     }
 
-    if (path.includes(urls.reels && settings.blockReels)) {
+    const blockReelsScreen = path.includes(urls.reels) && settings.blockReels;
+    if (blockReelsScreen) {
+      const main = body?.querySelector(selectors.main);
+      hide(main);
+    }
+
+    const blockExploreScreen = path.includes(urls.explore) && settings.blockExplore;
+    if (blockExploreScreen) {
       const main = body?.querySelector(selectors.main);
       main?.remove();
     }
 
-    if (path.includes(urls.explore) && settings.blockExplore) {
-      const main = body?.querySelector(selectors.main);
-      main?.remove();
-    }
-
-    if (path.includes(urls.stories) && settings.blockStories) {
+    const blockStoriesScreen = path.includes(urls.stories) && settings.blockStories;
+    if (blockStoriesScreen) {
       const storiesSection = body?.querySelector("section");
       storiesSection?.remove();
     }
