@@ -11,6 +11,7 @@ up to without falling into a blackhole of meaningless content.
 - Block 'Stories' section and page
 - Block 'Posts' feed
 - Block 'Suggested followers' section
+- Block 'Threads' links
 - Redirect 'For You' feed to 'Following' to avoid suggested posts
   
 Missing something? Leave me a [suggestion](https://github.com/aymyo/antigram-extension/issues)! ☀️
@@ -33,7 +34,10 @@ Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/an
 #### Disclaimer
 Instragam updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️
 
-### 🤝  Contributing
+### 💌 Support it
+Antigram is free and open-source and will always be. If you found it useful, please consider [donating](https://ko-fi.com/aymyo) to make the mantainance and improvement possible :)
+
+### 🤝 Contributing
 If you want to contribute please feel free to do so by opening a PR. I will review it at some point (although I can't promise that happens soon!).
 
 To start developing, do steps 1-7 and:
@@ -42,7 +46,7 @@ To start developing, do steps 1-7 and:
 12. Any change you make to the source folder will be automatically reflected if you refresh the extension.
 
 
-##### ℹ️  Sources and recommendations
+##### ℹ️ Sources and recommendations
 
 This extension is mostly inspired by Jord West's
 [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you
