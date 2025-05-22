@@ -16,14 +16,20 @@ async function main() {
   function onMutation() {
     const path = window.location.pathname;
     const body = document.body;
-
-    if (settings.blockExplore) {
-      const exploreLink = body?.querySelector(selectors.nav.explore);
-      hide(exploreLink);
+  
+    if(settings.blockThreads) {
+      const threadLinks = body?.querySelectorAll(selectors.nav.threads);
+      hide(threadLinks);
     }
+    
+    if (settings.blockExplore) {
+      const exploreLink = body?.querySelectorAll(selectors.nav.explore);
+      hide(exploreLink); 
+    }
+
     if (settings.blockReels) {
-      const reelsLink = body?.querySelector(selectors.nav.reels);
-      hide(reelsLink);
+      const reelsLink = body?.querySelectorAll(selectors.nav.reels);
+      hide(reelsLink); 
     }
 
     if (path === urls.base) {
@@ -35,7 +41,7 @@ async function main() {
       if (settings.blockPosts) {
         const posts = body?.querySelector(selectors.posts);
         const postsLoader = body?.querySelector(selectors.postsLoader);
-        const postsContainer = posts?.closest("div");
+        const postsContainer = posts?.parentElement?.parentElement?.parentElement;
         hide(posts);
         hide(postsLoader);
         hide(postsContainer);
@@ -62,7 +68,7 @@ async function main() {
 
     const blockStoriesSection = path.includes(urls.stories) && settings.blockStories;
     if (blockStoriesSection) {
-      const storiesSection = body?.querySelector("section");
+      const storiesSection = body;
       hide(storiesSection);
     }
 
