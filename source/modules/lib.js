@@ -4,22 +4,24 @@ export const defaultOptions = {
   blockStories: false,
   blockPosts: false,
   blockSuggestedFollowers: true,
-  blockForYouFeed: true
+  blockForYouFeed: true,
+  blockThreads: true,
 };
 
 export const labelsArray = Object.keys(defaultOptions);
 
 export const selectors = {
   main: "[role=main]",
-  storyFeed: "div[role='menu']",
+  storyFeed: "div[data-pagelet='story_tray']",
   posts: "article",
   postsLoader: "[data-visualcompletion='loading-state']",
   suggestedFollowers: "a[href*='/explore/people/']",
   nav: {
     direct: "a[href*='/direct/inbox/']",
     activity: "a[href*='/accounts/activity']",
-    explore: "a[href='/explore/']",
-    reels: "a[href='/reels/']"
+    explore: "a[href*='/explore/']",
+    reels: "a[href*='/reels/']",
+    threads: "a[href*='threads']",
   }
 };
 
@@ -30,8 +32,17 @@ export const urls = {
   explore: "/explore"
 };
 
-export const hide = (element) => {
-  if (element) {
-    element.style.display = "none";
+export const hide = (elements) => {
+  if (!elements) {
+    return;
   }
-};
+  if (elements instanceof Node) {
+    elements.style.display = "none";
+  }
+  if (elements instanceof NodeList) {
+    elements.forEach((element) => {
+      element.style.display = "none";
+    });
+  }
+}
+ 
