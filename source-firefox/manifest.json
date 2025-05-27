@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 3,"browser_specific_settings": {"gecko": {"id": "id@antigram.org"}},
   "name": "Antigram - Explore & Reels Blocker",
   "description": "Browser extension to fight back Instagram's addictive features.",
   "version": "2.1.1",
@@ -26,7 +26,7 @@
     }
   ],
   "background": {
-    "service_worker": "service_worker.js"
+    "scripts": ["service_worker.js"]
   },
 
   "options_ui": {
