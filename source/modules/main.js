@@ -42,9 +42,13 @@ async function main() {
         const posts = body?.querySelector(selectors.posts);
         const postsLoader = body?.querySelector(selectors.postsLoader);
         const postsContainer = posts?.parentElement?.parentElement?.parentElement;
-        hide(posts);
-        hide(postsLoader);
-        hide(postsContainer);
+        const loginForm = body?.querySelector(selectors.loginForm);
+        if (loginForm.length == 0) {
+          hide(posts);
+          hide(postsLoader);
+          hide(postsContainer);
+        }
+       
       }
 
       if (settings.blockSuggestedFollowers) {
