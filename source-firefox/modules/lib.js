@@ -12,6 +12,7 @@ export const labelsArray = Object.keys(defaultOptions);
 
 export const selectors = {
   main: "[role=main]",
+  loginForm: "#loginForm",
   storyFeed: "div[data-pagelet='story_tray']",
   posts: "article",
   postsLoader: "[data-visualcompletion='loading-state']",
