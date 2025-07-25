@@ -46,4 +46,18 @@ export const hide = (elements) => {
     });
   }
 }
+
+export const show = (elements) => {
+  if (!elements) {
+    return;
+  }
+  if (elements instanceof Node) {
+    elements.style.display = "inherit";
+  }
+  if (elements instanceof NodeList) {
+    elements.forEach((element) => {
+      element.style.display = "inherit";
+    });
+  }
+}
  
