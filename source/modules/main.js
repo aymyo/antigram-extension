@@ -1,4 +1,4 @@
-import { labelsArray, defaultOptions, selectors, urls, hide } from "../modules/lib.js";
+import { labelsArray, defaultOptions, selectors, urls, hide, show } from "../modules/lib.js";
 
 async function main() {
   const loadedSettings = await new Promise((resolve) => {
@@ -42,13 +42,26 @@ async function main() {
         const posts = body?.querySelector(selectors.posts);
         const postsLoader = body?.querySelector(selectors.postsLoader);
         const postsContainer = posts?.parentElement?.parentElement?.parentElement;
-        const loginForm = body?.querySelector(selectors.loginForm);
-        if (loginForm.length == 0) {
-          hide(posts);
-          hide(postsLoader);
-          hide(postsContainer);
+        var loginForm = body?.querySelector(selectors.loginForm);
+
+        hide(posts);
+        hide(postsLoader);
+        hide(postsContainer);
+
+        function handleLogin(event) {
+          console.log(`loginForm val = ${loginForm}`);
+            if (!Object.is(loginForm, null)) {
+              show(posts);
+              show(postsLoader);
+              show(postsContainer);
+              console.log('updated');
+              clearInterval(loginTimeout);
+          }
         }
-       
+
+        const loginTimeout = setInterval(handleLogin, 100);
+        setTimeout(function ( ) {clearInterval(loginTimeout);}, 200)
+
       }
 
       if (settings.blockSuggestedFollowers) {
