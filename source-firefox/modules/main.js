@@ -41,10 +41,36 @@ async function main() {
       if (settings.blockPosts) {
         const posts = body?.querySelector(selectors.posts);
         const postsLoader = body?.querySelector(selectors.postsLoader);
-        const postsContainer = posts?.parentElement?.parentElement?.parentElement;
+        const postsContainer = posts?.parentElement?.parentElement?.parentElement
+        var loginForm = body?.querySelector(selectors.loginForm);
+
         hide(posts);
         hide(postsLoader);
         hide(postsContainer);
+
+        function handleLogin(event) {
+          console.log(`loginForm val = ${loginForm}`);
+            if (!Object.is(loginForm, null)) {
+              show(posts);
+              show(postsLoader);
+              show(postsContainer);
+              console.log('updated');
+              clearInterval(loginTimeout);
+          }
+        }
+
+        const loginTimeout = setInterval(handleLogin, 100);
+        setTimeout(function ( ) {clearInterval(loginTimeout);}, 200)
+
+      }
+
+      if (settings.blockSuggestedFollowers) {
+        const suggestedFollowersLink = body?.querySelector(selectors.suggestedFollowers);
+        const suggestedFollowersTitle = suggestedFollowersLink?.closest("div");
+        const suggestedFollowers = suggestedFollowersTitle?.nextElementSibling;
+        hide(suggestedFollowersLink);
+        hide(suggestedFollowersTitle);
+        hide(suggestedFollowers);
       }
 
       if (settings.blockSuggestedFollowers) {

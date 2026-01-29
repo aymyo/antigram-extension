@@ -12,6 +12,7 @@ export const labelsArray = Object.keys(defaultOptions);
 
 export const selectors = {
   main: "[role=main]",
+  loginForm: "#loginForm",
   storyFeed: "div[data-pagelet='story_tray']",
   posts: "article",
   postsLoader: "[data-visualcompletion='loading-state']",
@@ -45,4 +46,17 @@ export const hide = (elements) => {
     });
   }
 }
- 
+
+export const show = (elements) => {
+  if (!elements) {
+    return;
+  }
+  if (elements instanceof Node) {
+    elements.style.display = "inherit";
+  }
+  if (elements instanceof NodeList) {
+    elements.forEach((element) => {
+      element.style.display = "inherit";
+    });
+  }
+} 
