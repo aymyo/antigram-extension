@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,"browser_specific_settings": {"gecko": {"id": "id@antigram.org","data_collection_permissions": {"required": ["none"]}}},
+  "manifest_version": 3,"browser_specific_settings": {"gecko": {"id": "id@antigram.org","data_collection_permissions": {"required": ["none"]}},"gecko_android": {"id": "id@antigram.org"}},
   "name": "Antigram - Explore & Reels Blocker",
   "description": "Browser extension to fight back Instagram's addictive features.",
   "version": "2.1.1",

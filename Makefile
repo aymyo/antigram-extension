@@ -14,7 +14,7 @@ swap-background:
 	rm -f $(BUILD_DIR)/manifest.json.bak
 
 add-id:
-	sed -i.bak 's/"manifest_version": 3/"manifest_version": 3,"browser_specific_settings": {"gecko": {"id": "id@antigram.org","data_collection_permissions": {"required": ["none"]}}}/' $(BUILD_DIR)/manifest.json
+	sed -i.bak 's/"manifest_version": 3/"manifest_version": 3,"browser_specific_settings": {"gecko": {"id": "id@antigram.org","data_collection_permissions": {"required": ["none"]}},"gecko_android": {"id": "id@antigram.org"}}/' $(BUILD_DIR)/manifest.json
 	rm -f $(BUILD_DIR)/manifest.json.bak
 
 swap-agent:
