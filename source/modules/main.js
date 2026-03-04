@@ -16,6 +16,15 @@ async function main() {
   function onMutation() {
     const path = window.location.pathname;
     const body = document.body;
+    const html = document.documentElement;
+
+    if (settings.grayscaleWebsite) {
+      html.style.filter = "grayscale(100%)";
+      html.style.webkitFilter = "grayscale(100%)";
+    } else {
+      html.style.filter = "";
+      html.style.webkitFilter = "";
+    }
   
     if(settings.blockThreads) {
       const threadLinks = body?.querySelectorAll(selectors.nav.threads);

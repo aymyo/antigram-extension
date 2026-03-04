@@ -2,7 +2,7 @@
 
 Antigram is a browser extension that gives the user tools to fight back Instagram's addictive
 features. It was made on my free time with the objective of being able to check what were my friends
-up to without falling into a blackhole of meaningless content.
+up to without falling into a black hole of meaningless content.
 
 ### ✨  Current features
 
@@ -13,15 +13,16 @@ up to without falling into a blackhole of meaningless content.
 - Block 'Suggested followers' section
 - Block 'Threads' links
 - Redirect 'For You' feed to 'Following' to avoid suggested posts
+- Make website grayscale 
   
 Missing something? Leave me a [suggestion](https://github.com/aymyo/antigram-extension/issues)! ☀️
 
 ### 📀  Stack
-To avoid a build process and make development easier, I've sticked to browser native functionalities and JS, HTML and CSS.
+To avoid a build process and make development easier, I've stickied to browser native functionalities and JS, HTML and CSS.
 
 ### ⏬  Set it up in your browser
 
-Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh "Chrome Store") or install it mmanually follwing the next steps:
+Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/antigram-explore-blocker/igbheapdmolhhmmklmkfjjjncmhihfjh "Chrome Store") or install it manually following the next steps:
 
 1. Clone the repo, `git clone https://github.com/aymyo/antigram-extension.git` or download the zip.
 2. Go to Google Chrome and click 'Customize' (the three-dot icon top-right corner)
@@ -32,10 +33,10 @@ Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/an
 7. Done!
 
 #### Disclaimer
-Instragam updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️
+Instagram updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️
 
 ### 💌 Support it
-Antigram is free and open-source and will always be. If you found it useful, please consider [donating](https://ko-fi.com/aymyo) to make the mantainance and improvement possible :)
+Antigram is free and open-source and will always be. If you found it useful, please consider [donating](https://ko-fi.com/aymyo) to make the maintenance and improvement possible :)
 
 ### 🤝 Contributing
 If you want to contribute please feel free to do so by opening a PR. I will review it at some point (although I can't promise that happens soon!).
@@ -51,8 +52,8 @@ To start developing, do steps 1-7 and:
 This extension is mostly inspired by Jord West's
 [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator), which I recommend if you
 are a Facebook user. Additionally, I also recommend
-[DF Youtube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna)
-to have a better experience using Youtube.
+[DF YouTube](https://chrome.google.com/webstore/detail/df-tube-distraction-free/mjdepdfccjgcndkmemponafgioodelna)
+to have a better experience using YouTube.
 
 
 [logo]: https://github.com/aymyo/antigram-extension/blob/main/source/public/ag32.png "Antigram Logo"
