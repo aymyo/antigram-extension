@@ -22,11 +22,12 @@ a {
 }
 
 .antigram {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: var(--gray);
   color: var(--white);
-  min-width: 40ch;
+  min-width: 42ch;
   width: 40ch;
   max-height: 600px;
   display: flex;
@@ -36,6 +37,14 @@ a {
   flex-direction: column;
   overflow: hidden;
   border-radius: 0.5rem;
+}
+
+/* Let tall tabs (e.g. About) scroll instead of being clipped by max-height,
+   while the header stays fixed. */
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .text-antigram {
@@ -62,6 +71,15 @@ input[type="checkbox"] {
   accent-color: var(--red);
   transform: scale(1.1);
   margin-right: 0.5rem;
+}
+
+/* Master "Select all" toggle: same row style as the options, set apart with a
+   divider and slightly bolder text. */
+.select-all {
+  font-weight: 600;
+  border-radius: 0;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 [data-tab-content] {

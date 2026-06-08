@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Antigram Options</title>
     <link
       rel="stylesheet"
@@ -14,7 +15,7 @@
 
   <body class="antigram">
     <div class="d-flex align-items-center py-3 px-4 gap-2 border-bottom">
-      <img width="26" height="26" src="../public/ag48.png" />
+      <img width="26" height="26" src="../public/ag48.png" alt="Antigram logo" />
       <h1 class="text-antigram m-0 fs-3 mb-1">Antigram</h1>
       <nav class="d-flex gap-3 mb-0 p-0 mt-0 ms-auto">
         <a data-tab-target="#options" class="active" href="#">Options</a>
@@ -28,15 +29,20 @@
           <h2>Hide</h2>
           <form class="fw-light">
             <p class="fw-light">Block the sections you don't want to see.</p>
-            <label><input type="checkbox" id="blockReels" /> Hide 'Reels' page </label>
-            <label><input type="checkbox" id="blockExplore" /> Hide 'Explore' page </label>
-            <label><input type="checkbox" id="blockStories" /> Hide 'Stories' section </label>
-            <label><input type="checkbox" id="blockPosts" /> Hide 'Posts' section </label>
-            <label><input type="checkbox" id="blockThreads" /> Hide 'Threads' links </label>
-            <label>
-              <input type="checkbox" id="blockSuggestedFollowers" />
-              Hide 'Suggested followers' section
+            <label class="select-all"
+              ><input type="checkbox" id="selectAllHide" /> Select all
             </label>
+            <div id="hideGroup">
+              <label><input type="checkbox" id="blockReels" /> Hide 'Reels' page </label>
+              <label><input type="checkbox" id="blockExplore" /> Hide 'Explore' page </label>
+              <label><input type="checkbox" id="blockStories" /> Hide 'Stories' section </label>
+              <label><input type="checkbox" id="blockPosts" /> Hide 'Posts' section </label>
+              <label><input type="checkbox" id="blockThreads" /> Hide 'Threads' links </label>
+              <label>
+                <input type="checkbox" id="blockSuggestedFollowers" />
+                Hide 'Suggested followers' section
+              </label>
+            </div>
 
             <h2 class="pt-3">Redirect</h2>
             <p>If enabled, will always show the 'Following' feed, avoiding suggested content.</p>
