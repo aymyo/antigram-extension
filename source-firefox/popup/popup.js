@@ -29,8 +29,26 @@ const restoreOptions = () => {
     for (const key of Object.keys(items)) {
       document.getElementById(key).checked = items[key];
     }
+    syncSelectAll();
   });
 };
+
+// "Select all" toggle for the Hide section. It mirrors the group's checkboxes
+// (checked when all are on, half-state when only some are) and is a UI helper
+// only — it is not one of the saved options.
+const selectAllHide = document.getElementById("selectAllHide");
+const hideChecks = Array.from(document.querySelectorAll("#hideGroup input[type=checkbox]"));
+
+const syncSelectAll = () => {
+  const checkedCount = hideChecks.filter((checkbox) => checkbox.checked).length;
+  selectAllHide.checked = checkedCount === hideChecks.length;
+  selectAllHide.indeterminate = checkedCount > 0 && checkedCount < hideChecks.length;
+};
+
+selectAllHide.addEventListener("change", () => {
+  hideChecks.forEach((checkbox) => (checkbox.checked = selectAllHide.checked));
+});
+hideChecks.forEach((checkbox) => checkbox.addEventListener("change", syncSelectAll));
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.getElementById("save").addEventListener("click", saveOptions);
