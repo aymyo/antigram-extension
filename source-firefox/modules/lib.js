@@ -103,7 +103,7 @@ export const hideMessagesPopup = (body) => {
   }
 };
 
-export const hideHomeDistractions = (body) => {
+export const hideSidebar = (body) => {
   // Locate the sidebar by its navigation links rather than Instagram's generated classes.
   const inbox = body.querySelector(selectors.nav.direct);
   let sidebar = inbox?.parentElement;
@@ -130,7 +130,9 @@ export const hideHomeDistractions = (body) => {
     }
     sidebar = sidebar.parentElement;
   }
+};
 
+export const hideHomeDistractions = (body) => {
   hide(body.querySelectorAll('footer, [role="contentinfo"]'));
   // Desktop's legal links are sometimes a plain div beneath the profile card.
   for (const link of body.querySelectorAll('a[href*="/legal/terms"], a[href*="/privacy/"]')) {

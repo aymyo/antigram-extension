@@ -7,6 +7,7 @@ import {
   getEffectiveSettings,
   hideMessagesPopup,
   hideHomeDistractions,
+  hideSidebar,
   hideTitleNotificationCount
 } from "../modules/lib.js";
 
@@ -30,7 +31,10 @@ async function main() {
     if (!body) return;
 
     if (settings.blockMessagesPopup) hideMessagesPopup(body);
-    if (settings.distractionFree && path === urls.base) hideHomeDistractions(body);
+    if (settings.distractionFree) {
+      hideSidebar(body);
+      if (path === urls.base) hideHomeDistractions(body);
+    }
 
     if (settings.blockThreads) {
       const threadLinks = body?.querySelectorAll(selectors.nav.threads);
