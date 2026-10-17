@@ -34,7 +34,7 @@ a {
   border: var(--black);
   justify-content: start;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
   border-radius: 0.5rem;
 }
 

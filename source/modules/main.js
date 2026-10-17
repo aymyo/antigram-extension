@@ -1,4 +1,14 @@
-import { labelsArray, defaultOptions, selectors, urls, hide } from "../modules/lib.js";
+import {
+  labelsArray,
+  defaultOptions,
+  selectors,
+  urls,
+  hide,
+  getEffectiveSettings,
+  hideMessagesPopup,
+  hideHomeDistractions,
+  hideTitleNotificationCount
+} from "../modules/lib.js";
 
 async function main() {
   const loadedSettings = await new Promise((resolve) => {
@@ -9,27 +19,32 @@ async function main() {
     chrome.storage.sync.set(defaultOptions);
   }
 
-  const settings = Object.keys(loadedSettings).length > 0 ? loadedSettings : defaultOptions;
+  const settings = getEffectiveSettings(loadedSettings);
 
   const mutationObserver = new MutationObserver(onMutation);
 
   function onMutation() {
+    if (settings.blockMessagesPopup) hideTitleNotificationCount();
     const path = window.location.pathname;
     const body = document.body;
-  
-    if(settings.blockThreads) {
+    if (!body) return;
+
+    if (settings.blockMessagesPopup) hideMessagesPopup(body);
+    if (settings.distractionFree && path === urls.base) hideHomeDistractions(body);
+
+    if (settings.blockThreads) {
       const threadLinks = body?.querySelectorAll(selectors.nav.threads);
       hide(threadLinks);
     }
-    
+
     if (settings.blockExplore) {
       const exploreLink = body?.querySelectorAll(selectors.nav.explore);
-      hide(exploreLink); 
+      hide(exploreLink);
     }
 
     if (settings.blockReels) {
       const reelsLink = body?.querySelectorAll(selectors.nav.reels);
-      hide(reelsLink); 
+      hide(reelsLink);
     }
 
     if (path === urls.base) {
@@ -88,7 +103,8 @@ async function main() {
   // Start observing the DOM for changes
   mutationObserver.observe(document, {
     subtree: true,
-    childList: true
+    childList: true,
+    characterData: true
   });
 
   onMutation([{ addedNodes: [document.documentElement] }]);
