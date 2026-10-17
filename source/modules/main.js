@@ -30,6 +30,13 @@ async function main() {
     const body = document.body;
     if (!body) return;
 
+    // Story replies and viewer controls can resemble messaging/sidebar controls.
+    // Keep all general hiding rules out of the viewer, including on story changes.
+    if (path === urls.stories || path.startsWith(`${urls.stories}/`)) {
+      if (settings.blockStories) hide(body);
+      return;
+    }
+
     if (settings.blockMessagesPopup) hideMessagesPopup(body);
     if (settings.distractionFree) {
       hideSidebar(body);
@@ -83,12 +90,6 @@ async function main() {
           window.location.search = queryParams.toString();
         }
       }
-    }
-
-    const blockStoriesSection = path.includes(urls.stories) && settings.blockStories;
-    if (blockStoriesSection) {
-      const storiesSection = body;
-      hide(storiesSection);
     }
 
     const blockReelsScreen = path.includes(urls.reels) && settings.blockReels;
