@@ -12,6 +12,9 @@ up to without falling into a blackhole of meaningless content.
 - Block 'Posts' feed
 - Block 'Suggested followers' section
 - Block 'Threads' links
+- Hide the floating Messages popup and unread count in the browser tab title
+- Only Stories mode: keep stories, the Instagram logo, and your profile on the home page; hide the feed, sidebar navigation, Messages popup, suggestions, and footer
+  (also hides the tab unread count; temporarily overrides individual options without changing them)
 - Redirect 'For You' feed to 'Following' to avoid suggested posts
   
 Missing something? Leave me a [suggestion](https://github.com/aymyo/antigram-extension/issues)! ☀️
@@ -30,6 +33,8 @@ Download it from the [Chrome Store](https://chrome.google.com/webstore/detail/an
 5. Click 'Load unpacked'
 6. Select the 'source' folder in the `antigram-extension` project
 7. Done!
+
+After changing options, click **Save changes** and refresh Instagram to apply them.
 
 #### Disclaimer
 Instragam updates periodically its web version, potentially breaking some functionalities of the extension. If that happens, please ensure you are using the last version of Antigram, and if that's the case, open an [issue](https://github.com/aymyo/antigram-extension/issues) so I can fix it! 🛠️

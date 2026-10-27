@@ -38,12 +38,30 @@
               Hide 'Suggested followers' section
             </label>
 
+            <label
+              ><input type="checkbox" id="blockMessagesPopup" /> Hide floating 'Messages'
+              popup</label
+            >
+
             <h2 class="pt-3">Redirect</h2>
             <p>If enabled, will always show the 'Following' feed, avoiding suggested content.</p>
             <label>
               <input type="checkbox" id="blockForYouFeed" /> Redirect "For you" feed to "Following"
             </label>
           </form>
+          <h2 class="pt-3">Only Stories mode</h2>
+          <p id="only-stories-description" class="fw-light">
+            If enabled, keeps only stories, the Instagram logo, and your profile on the home page,
+            hiding other distractions. Overrides individual options while enabled.
+          </p>
+          <label
+            ><input
+              type="checkbox"
+              id="distractionFree"
+              aria-describedby="only-stories-description"
+            />
+            Enable Only Stories mode</label
+          >
           <div class="d-flex gap-3 align-items-center pb-2 pt-3">
             <button id="save" class="btn">Save changes</button>
             <small id="status"></small>

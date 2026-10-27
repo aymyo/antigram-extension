@@ -1,4 +1,15 @@
-import { labelsArray, defaultOptions, selectors, urls, hide } from "../modules/lib.js";
+import {
+  labelsArray,
+  defaultOptions,
+  selectors,
+  urls,
+  hide,
+  getEffectiveSettings,
+  hideMessagesPopup,
+  hideHomeDistractions,
+  hideSidebar,
+  hideTitleNotificationCount
+} from "../modules/lib.js";
 
 async function main() {
   const loadedSettings = await new Promise((resolve) => {
@@ -9,27 +20,42 @@ async function main() {
     chrome.storage.sync.set(defaultOptions);
   }
 
-  const settings = Object.keys(loadedSettings).length > 0 ? loadedSettings : defaultOptions;
+  const settings = getEffectiveSettings(loadedSettings);
 
   const mutationObserver = new MutationObserver(onMutation);
 
   function onMutation() {
+    if (settings.blockMessagesPopup) hideTitleNotificationCount();
     const path = window.location.pathname;
     const body = document.body;
-  
-    if(settings.blockThreads) {
+    if (!body) return;
+
+    // Story replies and viewer controls can resemble messaging/sidebar controls.
+    // Keep all general hiding rules out of the viewer, including on story changes.
+    if (path === urls.stories || path.startsWith(`${urls.stories}/`)) {
+      if (settings.blockStories) hide(body);
+      return;
+    }
+
+    if (settings.blockMessagesPopup) hideMessagesPopup(body);
+    if (settings.distractionFree) {
+      hideSidebar(body);
+      if (path === urls.base) hideHomeDistractions(body);
+    }
+
+    if (settings.blockThreads) {
       const threadLinks = body?.querySelectorAll(selectors.nav.threads);
       hide(threadLinks);
     }
-    
+
     if (settings.blockExplore) {
       const exploreLink = body?.querySelectorAll(selectors.nav.explore);
-      hide(exploreLink); 
+      hide(exploreLink);
     }
 
     if (settings.blockReels) {
       const reelsLink = body?.querySelectorAll(selectors.nav.reels);
-      hide(reelsLink); 
+      hide(reelsLink);
     }
 
     if (path === urls.base) {
@@ -66,12 +92,6 @@ async function main() {
       }
     }
 
-    const blockStoriesSection = path.includes(urls.stories) && settings.blockStories;
-    if (blockStoriesSection) {
-      const storiesSection = body;
-      hide(storiesSection);
-    }
-
     const blockReelsScreen = path.includes(urls.reels) && settings.blockReels;
     if (blockReelsScreen) {
       const main = body?.querySelector(selectors.main);
@@ -88,7 +108,8 @@ async function main() {
   // Start observing the DOM for changes
   mutationObserver.observe(document, {
     subtree: true,
-    childList: true
+    childList: true,
+    characterData: true
   });
 
   onMutation([{ addedNodes: [document.documentElement] }]);

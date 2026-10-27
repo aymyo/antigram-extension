@@ -1,4 +1,4 @@
-import { labelsArray } from "../modules/lib.js";
+import { labelsArray, defaultOptions } from "../modules/lib.js";
 
 // Saving and loading options from storage
 const saveOptions = () => {
@@ -25,7 +25,7 @@ const saveOptions = () => {
 };
 
 const restoreOptions = () => {
-  chrome.storage.sync.get(labelsArray, (items) => {
+  chrome.storage.sync.get(defaultOptions, (items) => {
     for (const key of Object.keys(items)) {
       document.getElementById(key).checked = items[key];
     }
