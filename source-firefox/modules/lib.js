@@ -17,10 +17,10 @@ export const selectors = {
   postsLoader: "[data-visualcompletion='loading-state']",
   suggestedFollowers: "a[href*='/explore/people/']",
   nav: {
-    direct: "a[href*='/direct/inbox/']",
-    activity: "a[href*='/accounts/activity']",
-    explore: "a[href*='/explore/']",
-    reels: "a[href*='/reels/']",
+    direct: "a[href$='/direct/inbox/'], a[href$='/direct/inbox']",
+    activity: "a[href$='/accounts/activity/'], a[href$='/accounts/activity']",
+    explore: "a[href$='/explore/'], a[href$='/explore']",
+    reels: "a[href$='/reels/'], a[href$='/reels']",
     threads: "a[href*='threads']",
   }
 };
