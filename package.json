@@ -1,6 +1,6 @@
 {
   "name": "antigram-extension",
-  "author": "@aymyo",
+  "author": "[trau]",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.52.0",
