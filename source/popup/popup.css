@@ -22,19 +22,20 @@ a {
 }
 
 .antigram {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: var(--gray);
   color: var(--white);
   min-width: 40ch;
   width: 40ch;
-  max-height: 600px;
   display: flex;
   margin: 0 auto;
   border: var(--black);
   justify-content: start;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-radius: 0.5rem;
 }
 
