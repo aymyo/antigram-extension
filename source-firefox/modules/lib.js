@@ -6,6 +6,7 @@ export const defaultOptions = {
   blockSuggestedFollowers: true,
   blockForYouFeed: true,
   blockThreads: true,
+  grayscaleWebsite: false,
 };
 
 export const labelsArray = Object.keys(defaultOptions);
